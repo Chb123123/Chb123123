@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			var achievement = parseFloat(prompt("输入你的学习成绩"));
+			if (achievement >= 0 && achievement < 60) {
+				alert("你的成绩为:" + achievement + ",等级为不及格！");
+			} else if (achievement <= 80) {
+				alert("你的成绩为:" + achievement + ",等级为及格！");
+			} else if (achievement <= 100) {
+				alert("你的成绩为:" + achievement + ",等级为优秀！");
+			} else {
+				alert("请输入正确的成绩！");
+			}
+		</script>
+	</head>
+	<body></body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			var fruit = prompt("输入水果，查询水果价格");
+			switch (fruit) {
+				case "苹果":
+					alert(fruit + "3.5/斤");
+					break;
+				case "香蕉":
+					alert(fruit + "2.5/斤");
+					break;
+				case "西瓜":
+					alert(fruit + "5.0/斤");
+					break;
+				case "榴莲":
+					alert(fruit + "30.0/斤");
+					break;
+				default:
+					alert("没有此水果！");
+			}
+			// 判断时间案例
+			var time = parseInt(prompt("输入当前时间段"));
+			if (time > 20) {
+				alert("晚上好！");
+			} else if (time > 18) {
+				alert("傍晚好!");
+			} else if (time > 12) {
+				alert("下午好！");
+			} else if ((time == 12)) {
+				alert("中午好！");
+			} else if (time > 8) {
+				alert("上午好！");
+			} else if (time > 0) {
+				alert("早上好！");
+			} else {
+				alert("请输入正确的时间！");
+			}
+			// 比较两个数的大小
+			var number = parseFloat(prompt("输入一个数"));
+			var number1 = parseFloat(prompt("输入第二个数"));
+			if (number > number1) {
+				alert(number + "最大");
+			} else {
+				alert(number1 + "最大");
+			}
+			// 根据输入的数字返回星期几
+			var date = parseInt(prompt("输入 1-7 的数字，返回星期"));
+			switch (date) {
+				case 1:
+					alert("今天星期一");
+					break;
+				case 2:
+					alert("今天星期二");
+					break;
+				case 3:
+					alert("今天星期三");
+					break;
+				case 4:
+					alert("今天星期四");
+					break;
+				case 5:
+					alert("今天星期五");
+					break;
+				case 6:
+					alert("今天星期六");
+					break;
+				case 7:
+					alert("今天星期天");
+					break;
+				default:
+					alert("输入正确的数字");
+			}
+		</script>
+	</head>
+	<body></body>
+</html>

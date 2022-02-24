@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			// 写一个函数，输入两个数，进行任意的算数运算
+
+			function calculation(num1, num2, operator) {
+				var num1 = parseFloat(prompt("输入想计算的第一个数字："));
+				var num2 = parseFloat(prompt("输入想计算的第一个数字："));
+				var operator =(prompt("想进行什么运算：+ - * /"));
+				if (operator == "+") {
+					var sum = num1 + num2;
+				} else if (operator == "-") {
+					var sum = num1 - num2;
+				} else if (operator == "*") {
+					var sum = num1 * num2;
+				} else if (operator == "/") {
+					var sum = num1 / num2;
+				}
+				return sum;
+			}
+			alert('两个数的运算和为：'+calculation());
+			// 写一个函数，判断输入的数是否是素数
+			function number(num1) {
+				var num1 = parseFloat(prompt("输入一个数，判断是什么类型"));
+				if (num1 <= 2) {
+					return "小于2的数既不是素数，也不是合数";
+				}
+				for (i = 2; i <= num1; i++) {
+					if (num1 % i != 0 && num1 / num1 == 1) {
+						return "该数为素数";
+					} else {
+						return "该数为合数";
+					}
+				}
+			}
+			alert(number());
+		</script>
+	</head>
+	<body></body>
+</html>

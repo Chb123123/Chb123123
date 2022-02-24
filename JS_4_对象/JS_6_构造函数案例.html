@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			// function Hero(uname, type, blood) {
+			// 	this.name = uname;
+			// 	this.types = type;
+			// 	this.blood = blood;
+			// 	this.good = function (goodAt) {
+			// 		console.log(goodAt);
+			// 	};
+			// }
+			// var Lp = new Hero("廉颇", "力量型", "500血量");
+			// console.log(Lp);
+			// Lp.good("攻击");
+			// var Hy = new Hero("后裔", "射手型", "100血量");
+			// console.log(Hy);
+			// Hy.good("远程");
+			function Hero(uname, age, set) {
+				this.name = uname;
+				this.age = age;
+				this.set = set;
+				this.blod = function (goodAt) {
+					console.log(goodAt);
+				};
+			}
+			var LZ = new Hero("赵成魁", 20, "男");
+            LZ.blod('打飞机');
+			console.log(LZ);
+			for (i in LZ) {
+                console.log(i)
+				console.log(LZ[i]);
+			}
+		</script>
+	</head>
+	<body></body>
+</html>

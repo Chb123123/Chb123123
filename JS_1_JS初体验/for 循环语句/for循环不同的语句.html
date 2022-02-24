@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			// var time = parseFloat(prompt("输入最终的年龄："));
+			// var age = 0;
+			// for (i = 0; i <= time; i++) {
+			// 	console.log("你今年" + age++ + "岁");
+			// }
+			// 1-100 之间的累加
+			var num = 0,
+				sum = 0;
+			for (var i = 1; i <= 100; i++) {
+				num++;
+				sum = num + sum;
+			}
+			console.log('1-100的和为：'+sum);
+			// 1-100 之间所有数的平均值
+			var sum2 = 0;
+			for (i = 1; i <= 100; i++) {
+				sum2 += i;
+			}
+			sum = sum2 / 100;
+			console.log('1-100和的平均值为：'+sum2);
+			// 1-100所有奇数和偶数的和
+			var odd_num = 0,
+				even = 0;
+			for (i = 0; i <= 100; i++) {
+				if (i % 2 == 1) {
+					odd_num += i;
+				} else if (i % 2 == 0) {
+					even += i;
+				}
+			}
+			console.log("1-100奇数和为：" + odd_num + "\n1-100偶数和为：" + even);
+			// 1-100中能被三整除的和
+			var sum1 = 0;
+			for (i = 1; i <= 100; i++) {
+				if ((i % 3 == 0)) {
+					sum1 += i;
+				}
+			}
+			console.log('1-100中能被三整除的和为：'+sum1);
+		</script>
+	</head>
+	<body></body>
+</html>

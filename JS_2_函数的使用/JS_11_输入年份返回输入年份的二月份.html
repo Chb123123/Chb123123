@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			function years(time) {
+				if (time % 4 == 0 && time % 100 != 0) {
+					var flay = true;
+				} else {
+					var flay = false;
+				}
+				return flay;
+			}
+			// 函数嵌套
+			function isRunYears() {
+				var years1 = prompt("输入年份，返回二月份天数");
+				years(years1);
+				if (years()) {
+					date = alert("输入年份为29天");
+				} else {
+					date = alert("输入年份为28天");
+				}
+				return date;
+			}
+			var date1 = isRunYears();
+			console.log(date1);
+			// 判断闰年
+		</script>
+	</head>
+	<body></body>
+</html>

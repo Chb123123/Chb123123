@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			// arguments 的使用
+			// arguments 里面存储了所有传递过来的实参
+			// arguments 是一个伪数组
+			function fu() {
+				console.log(arguments);
+				for (i = 0; i < arguments.length; i++) {
+					console.log(arguments[i]);
+				}
+			}
+			fu(1, 2, 3, 4, 5);
+            // 利用函数把用户输入的最大值打印出来
+            function numMax(){
+                var numMax = arguments[0];
+                for(i=0;i<arguments.length;i++){
+                    if(numMax < arguments[i]){
+                        numMax = arguments[i];
+                    }
+                }
+                return numMax;
+            }
+            console.log(numMax(2,3,5,6,33,25,67,88,90,101,9))
+		</script>
+	</head>
+	<body></body>
+</html>

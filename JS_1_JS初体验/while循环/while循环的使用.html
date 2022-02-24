@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			// var num = 0,
+			// 	sum = 0;
+			// while (num<=100) {
+			// 	if (num == 0) {
+			// 		console.log('你出生了')
+			//         // continue;
+			// 	}else if(num==100){
+			//         console.log('你今年'+num+'岁！'+'\n你死了');
+			//         // continue;
+			//         break;
+			//     }
+			//     console.log('你今年'+num+'岁！');
+			// 	num += 1;
+			// }
+
+			var num = 1;
+			while (true) {
+				var str = prompt("你爱不爱我？");
+				if (str === "我爱你" || str === "爱你" || str === "爱") {
+					alert("我也爱你！");
+					alert("亲爱的，么么哒");
+					break;
+				} else {
+					alert("回答错误，继续回答！");
+					// continue;
+				}
+				if (num == 3) {
+					alert("三次都回答错误，分手吧，你根本就不爱我");
+					break;
+				}
+				num++;
+			}
+		</script>
+	</head>
+	<body></body>
+</html>

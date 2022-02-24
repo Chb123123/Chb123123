@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			var arr = [5, 3, 4, 6, 1, 2, 7, 9];
+			// var arr1 = [];
+			for (i = 0; i < arr.length; i++) {
+				for (j = 0; j < arr.length; j++) {
+					// 如果数组里面的第一个元素小于第二个元素，则将两个元素交换变量
+					if (arr[j] < arr[j + 1]) {
+						var temp = arr[j];
+						arr[j] = arr[j + 1];
+						arr[j + 1] = temp;
+					}
+				}
+			}
+			console.log(arr);
+		</script>
+	</head>
+	<body></body>
+</html>

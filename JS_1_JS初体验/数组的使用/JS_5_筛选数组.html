@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			var arr = [1, 2, 5, 7, 56, 3, 32, 76, 12, 46, 21];
+			var num_arr = [];
+			var num = arr[0];
+			var num1 = 0;
+			for (i = 0; i < arr.length; i++) {
+				num = arr[i];
+				if (num >= 10) {
+					num_arr[num1] = num;
+					num1++;
+				}
+			}
+			console.log(num_arr);
+			// 第二种方法 使用 length 自动检测数组长度
+			var arr1 = [1, 2, 5, 7, 56, 3, 32, 76, 12, 46, 21];
+			var newarr = [];
+			for (i = 0; i < arr1.length; i++) {
+				if (arr1[i] < 10) {
+					newarr[newarr.length] = arr1[i];
+				}
+			}
+			console.log(newarr);
+		</script>
+	</head>
+	<body></body>
+</html>

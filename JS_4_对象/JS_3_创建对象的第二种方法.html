@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			// 利用 new ojbect 创建对象
+			var obj = new Object(); //创建一个空的对象
+			obj.uname = "张三";
+			obj.age = 18;
+			obj.sex = "男";
+			obj.sayHi = function () {
+				console.log("hi");
+			};
+			// console.log(obj);
+            // 先创建一个空的对象 利用等号 = 赋值的方法添加对象的属性和方法
+            // 每个属性和方法之间用 分号结束
+            console.log(obj.age);
+            console.log(obj['uname'])
+            obj.sayHi();
+		</script>
+	</head>
+	<body></body>
+</html>

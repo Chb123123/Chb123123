@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			// 利用函数封装进行冒泡排序
+            // sort: 排序
+			function sort() {
+				var num;
+				for (i = 0; i < arguments.length; i++) {
+					for (j = 0; j < arguments.length - i; j++) {
+						if (arguments[j] > arguments[j + 1]) {
+							num = arguments[j];
+							arguments[j] = arguments[j+1];
+							arguments[j+1] = num;
+						}
+					}
+				}
+				return arguments;
+			}
+			console.log(sort(101, 2, 3, 4, 7, 6, 0, 8, 9, 10, 11, 23));
+		</script>
+	</head>
+	<body></body>
+</html>

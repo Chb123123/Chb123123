@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			// 写一个构造函数，可以创建一个电脑对象，该对象要有颜色、重量、品牌、型号，功能：可以看电影，听音乐
+			function Computer(color, wight, brand, model) {
+				this.color = color;
+				this.wight = wight;
+				this.brand = brand;
+				this.model = model;
+				this.function = function (function1, function2) {
+					console.log(function1);
+					console.log(function2);
+				};
+			}
+			var lianxiang = new Computer("白色", "1500克", "联想", "拯救者");
+			lianxiang.function("玩游戏", "看电影");
+			console.log(lianxiang);
+			for (key in lianxiang) {
+				console.log(key);
+				console.log(lianxiang[key]);
+			}
+			// 写一个按钮对象，该对象需要包含宽、高、背景颜色、和点击行为
+			function Button(width, height, bg) {
+				this.width = width;
+				this.height = height;
+				this.background = bg;
+				this.chick = function (effect) {
+					console.log(effect);
+				};
+			}
+			var submit = new Button("40像素", "20像素", "红色");
+			submit.chick("提交内容");
+			// console.log(submit.chick());
+			for (key in submit) {
+				// console.log(key);
+				console.log(submit[key]);
+			}
+			// 创建一个车的对象，该对象要有重量、颜色、牌子、可以载人、拉货、耕田
+			var car = new Object();
+			car.wight = "2000kg";
+			car.color = "白色";
+			car.brand = "赣B88888";
+			car.function = function () {
+				console.log("载人");
+				console.log("拉货");
+				console.log("耕田");
+			};
+			// console.log(car)
+			for (key in car) {
+				console.log(key);
+				console.log(car[key]);
+			}
+			car.function();
+			// 写一个函数，实现任意反转数组
+			function flip(arr) {
+				var arr1 = [];
+				for (i = 0; i < arr.length; i++) {
+					arr1[i] = arr[arr.length - i - 1];
+				}
+				return arr1;
+			}
+			console.log(flip([5, 4, 3, 2, 1]));
+			// 写一个函数，实现对数字数组的排序
+			function sort(arr) {
+				var tmpe;
+				for (i = 0; i < arr.length; i++) {
+					for (j = 0; j < arr.length - i; j++) {
+                        // 数组按从小到大排序，若是想要从大到小排序，可以把 if 里面的 > 改成小于
+						if (arr[j] > arr[j + 1]) {
+							tmpe = arr[j];
+							arr[j] = arr[j + 1];
+							arr[j + 1] = tmpe;
+						}
+					}
+				}
+				return arr;
+			}
+			console.log(sort([5, 4, 3, 2, 1, 6, 8, 7, 11]));
+            
+		</script>
+	</head>
+	<body></body>
+</html>

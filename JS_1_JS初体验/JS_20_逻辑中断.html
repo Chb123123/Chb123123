@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 如果第一个表达式为真,则返回第二个表达式
+        console.log(123 && 456); //返回456
+        console.log(123 && 234 && 345); //返回345
+        console.log(123 && 0); //返回0
+        // 如果第一个表达式为假,则返回第一个表达式
+        console.log(0 && 123+456); // 返回0
+        var num = 0;
+        // console.log(123 || num++);
+        console.log(num)
+        console.log(++num || 123);
+        console.log(123 || 0 && 1);
+        var age = 12;
+        console.log(age %= 2);
+        console.log((2+2*2)+'' === '6');
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>

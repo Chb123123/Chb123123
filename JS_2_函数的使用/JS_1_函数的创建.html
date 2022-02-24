@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			// num1为相加的初始值， num2为相加的最大值
+			// 函数的作用为求出从 num1 加到 num2 的和
+			function getSum(num1, num2) {
+				var sum = 0;
+				for (i = num1; i <= num2; i++) {
+					sum += i;
+				}
+				console.log(sum);
+			}
+			// 使用函数，求出从1-100的和
+			getSum(1, 100);
+			// 创建一个打招呼的函数
+			function greet(srt) {
+				console.log("你好啊" + srt);
+			}
+			greet("老铁");
+			greet("老妹");
+			// 利用函数求任意两个数的和
+			function sum(num1, num2) {
+				// var sum = num1 + num2;
+				// console.log("两个数的和为：" + sum);
+                return num1 + num2;
+			}
+			console.log(sum(1, 199));
+			// 利用函数求任意两个数之间的和
+			function sum1(num1, num2) {
+				var sum = 0;
+				for (i = num1; i <= num2; i++) {
+					sum += i;
+				}
+				console.log(sum);
+			}
+			// 调用函数
+			sum1(1, 100);
+		</script>
+	</head>
+	<body></body>
+</html>

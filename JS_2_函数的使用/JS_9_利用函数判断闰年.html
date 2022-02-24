@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			function years(time) {
+				if ((time % 4 == 0 && time % 100 != 0)) {
+					return "是闰年";
+				} else {
+					return "是平年";
+				}
+			}
+			console.log(years(2020));
+		</script>
+	</head>
+	<body></body>
+</html>
