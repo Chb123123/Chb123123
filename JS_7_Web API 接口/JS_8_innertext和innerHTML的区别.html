@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<p id="date"></p>
+		<p id="date1"></p>
+		<script>
+			var p = document.getElementById('date')
+            var p1 = document.getElementById('date1')
+			// innertext 不识别css 元素
+			p.innerText = ("今天天气真好");
+			// innerHTML 可以识别 css 元素
+            p1.innerHTML = ('<strong>今天</strong>天气真好')
+		</script>
+	</body>
+</html>

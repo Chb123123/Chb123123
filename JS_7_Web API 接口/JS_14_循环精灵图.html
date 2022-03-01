@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			body {
+				box-sizing: border-box;
+			}
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				width: 300px;
+				height: 300px;
+				margin: 100px auto;
+				border: 1px solid red;
+				box-sizing: border-box;
+			}
+			ul li {
+				flex: 33.3%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100px;
+				list-style: none;
+				float: left;
+				border: 1px solid red;
+				box-sizing: border-box;
+				background-color: #bbb;
+			}
+			span {
+				display: block;
+				width: 84px;
+				height: 71px;
+				background-color: red;
+				background: url(image/nav.png) no-repeat;
+				background-position: 0 -10px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li><span></span></li>
+			<li><span></span></li>
+			<li><span></span></li>
+			<li><span></span></li>
+			<li><span></span></li>
+			<li><span></span></li>
+			<li><span></span></li>
+			<li><span></span></li>
+			<li><span></span></li>
+		</ul>
+		<script>
+			var spans = document.querySelectorAll("span");
+
+			for (var i = 0; i < spans.length; i++) {
+				var coordinate = i * 85;
+				spans[i].style.backgroundPosition = "0 -" + coordinate + "px";
+			}
+		</script>
+	</body>
+</html>

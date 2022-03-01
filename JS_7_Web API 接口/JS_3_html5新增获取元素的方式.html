@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box" id="box1">盒子</div>
+    <div class="box">盒子</div>
+    <div id="nav">
+        <ul>
+            <li>首页</li>
+            <li>产品</li>
+        </ul>
+    </div>
+    <script>
+        // document.getElementsByClassName 根据类名获取某些元素集合 
+        var box = document.getElementsByClassName('box')
+        console.dir(box)
+        // 利用 document.querSelector('选择器') 只能选择第一个元素
+        var str = document.querySelector('#box1')
+        console.log(str)
+        // 选择ul 里面的第一个 li 
+        var str1 = document.querySelector('#nav ul li')
+        console.log(str1)
+        // 
+        var Allbox = document.querySelectorAll('.box')
+        console.log(Allbox)
+    </script>
+</body>
+</html>

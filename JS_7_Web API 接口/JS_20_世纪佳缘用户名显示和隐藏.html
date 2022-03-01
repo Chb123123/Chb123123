@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			input {
+				outline: none;
+				color: #999;
+			}
+			.btn {
+				width: 450px;
+				height: 40px;
+				margin: 50px auto;
+				/* border: 1px solid red; */
+			}
+			#username {
+				height: 20px;
+				padding-left: 10px;
+				border: 1px solid #ccc;
+			}
+			#password {
+				height: 20px;
+				padding-left: 10px;
+				border: 1px solid #ccc;
+			}
+			input[type="submit"] {
+				background-color: #008bc5;
+				color: white;
+				border: 1px solid #ccc;
+				height: 23px;
+				width: 60px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="btn">
+			<input type="text" name="" id="username" value="邮箱ID/手机号" />
+			<input type="password" name="" id="password" placeholder="密码" />
+			<input type="submit" value="登入" />
+		</div>
+		<script>
+			var text = document.querySelector("#username");
+			var password = document.querySelector("#password");
+			// console.log(text)
+			text.onfocus = function () {
+				this.style.border = "1px solid pink";
+				if (this.value === "邮箱ID/手机号") {
+					this.value = "";
+					// this.style.borderColor = 'pink'
+				}
+			};
+			text.onblur = function () {
+				this.style.border = "1px solid #ccc";
+				if (this.value === "") {
+					this.value = "邮箱ID/手机号";
+				}
+			};
+			password.onfocus = function () {
+				this.style.border = "1px solid pink";
+				if (this.placeholder === "密码") {
+					this.placeholder = "";
+				}
+			};
+			password.onblur = function () {
+				this.style.border = "1px solid #ccc";
+				if (this.placeholder === "") {
+					this.placeholder = "密码";
+				}
+			};
+		</script>
+	</body>
+</html>

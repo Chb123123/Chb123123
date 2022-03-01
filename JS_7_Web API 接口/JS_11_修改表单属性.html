@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			input {
+                /* 取消选中后的搜索边框 */
+                outline: none;
+			}
+		</style>
+	</head>
+	<body>
+		<button>按钮</button>
+		<input type="text" placeholder="输入内容" />
+		<script>
+            var btn = document.querySelector('button')
+            var input = document.querySelector('input')
+            // 注册事件  处理程序
+            btn.onclick = function(){
+                // input.innerHTML = '不能为空'  // 对表单input 不起效果
+                // 表单里面的值 文字是通过 value 输入的 
+                input.placeholder = '不能为空'
+                // 如果想要某个表单被禁用 不能再点击 disabled; 我们想要这个按钮被禁用
+                btn.disabled = true;
+            }
+        </script>
+	</body>
+</html>

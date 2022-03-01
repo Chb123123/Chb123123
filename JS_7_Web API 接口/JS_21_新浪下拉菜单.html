@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+            .container{
+                /* border: 1px solid red; */
+                margin: 50px auto;
+                width: 80px;
+            }
+			.weibo {
+				border: 1px solid #ccc;
+				width: 80px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				
+			}
+			.weibo span {
+				display: inline-block;
+				border-top: 0;
+				border-left: 0;
+				border-bottom: 1px solid #ccc;
+				border-right: 1px solid #ccc;
+				width: 7px;
+				height: 7px;
+				transform: rotateZ(45deg);
+				margin-bottom: 5px;
+				margin-left: 5px;
+			}
+			.weibo:hover {
+				border: 1px solid orange;
+				color: orange;
+			}
+			.weibo:hover span {
+				border-bottom: 1px solid orange;
+				border-right: 1px solid orange;
+			}
+            .container:hover li{
+                display: block;
+            }
+            li{
+                display: none;
+                list-style: none;
+                width: 80px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+                border: 1px solid orange;
+                border-top: 0;
+            }
+            .lis{
+                display: block;
+            }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="weibo">
+				微博
+				<span></span>
+			</div>
+            <ul>
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+		</div>
+		<script>
+            var weibo = document.querySelector('.weibo')
+            var lis = document.querySelectorAll('li')
+            // console.log(lis)
+            weibo.onclick = function(){
+                lis.className = 'lis'
+                // console.log('asjcjac')
+            }
+        </script>
+	</body>
+</html>

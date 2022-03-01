@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+            div{
+                margin: auto;
+                /* border: 1px solid red; */
+                /* overflow: hidden; */
+                width: 400px;
+            }
+			button {
+				width: 120px;
+				height: 40px;
+				border-radius: 4px;
+				border: 0;
+				background-color: red;
+				color: white;
+				font-size: 20px;
+			}
+            button:nth-child(2){
+                float: right;
+            }
+			img {
+				/* border: 1px solid red; */
+				width: 400px;
+				height: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<button id="dog">狗头</button>
+			<button id="cat">猫头</button><br />
+			<img src="image/R-C.jpg" alt="" title="狗头"/>
+		</div>
+		<script>
+			var dog = document.getElementById("dog");
+			var cat = document.getElementById("cat");
+			var img = document.querySelector("img");
+			// 注册事件
+			dog.onclick = function () {
+				img.src = "image/R-C.jpg";
+                img.title = '狗头'
+			};
+			cat.onclick = function () {
+				img.src = "image/R-C1.jpg";
+                img.title = '猫头'
+			};
+		</script>
+	</body>
+</html>

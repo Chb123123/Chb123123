@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin: 0;
+        }
+        #btn{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border: 1px solid red;
+            height: 50px;
+            width: 100px;
+            background-color: yellow;
+            color: red;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        // 事件三要素 事件源 事件类型 事件处理程序 称为事件三要素
+        // 触发 响应机制  例如：经过 、点击
+        // 点击一个按钮 弹出对话框
+        // (1) 事件源 事件被触发对象  按钮
+        var btn = document.getElementById('btn')
+        // (2) 事件类型 如何触发  比如鼠标点击(onclick)触发 还是鼠标经过 还是键盘按下
+        // 事件处理程序 通过一个函数赋值的方式完成
+        btn.onclick = function(){
+            alert('老铁六六六')
+        }
+    </script>
+</body>
+</html>

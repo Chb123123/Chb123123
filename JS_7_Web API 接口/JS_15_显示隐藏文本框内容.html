@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			input {
+				display: block;
+				width: 600px;
+				height: 40px;
+				margin: 100px auto;
+				outline: none;
+				font-size: 20px;
+				color: #999;
+				border: 1px solid blue;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" name="" id="input" value="手机" />
+		<script>
+			var input = document.querySelector("#input");
+			// console.log(input)
+			// 获取焦点 onfocus
+			input.onfocus = function () {
+				// console.log('焦点')
+				if (this.value === "手机") {
+					this.value = "";
+				}
+				this.style.color = "#333";
+			};
+			// 失去焦点 onblur
+			input.onblur = function () {
+				if (this.value === "") {
+					this.value = "手机";
+                    this.style.color = '#999'
+				}
+			};
+		</script>
+	</body>
+</html>

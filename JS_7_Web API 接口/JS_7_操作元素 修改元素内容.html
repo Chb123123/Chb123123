@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<button id="times">活动倒计时还有</button>
+		<div>当前时间</div>
+		<p></p>
+		<script>
+			function ciuntDown() {
+				var date = new Date();
+				var arr = ["天", "一", "二", "三", "四", "五", "六"];
+				var date1 = date.getFullYear(); //返回当前年份
+				var date2 = date.getMonth() + 1; //返回当前的月份 得到的月份比实际的小 1 所以要加 1
+				var date3 = date.getDate(); // 返回当前的天数
+				var date4 = date.getHours(); // 返回当前的小时
+				var date5 = date.getMinutes(); // 返回当前的分钟
+				var date6 = date.getSeconds(); // 返回当前的秒
+				var date7 = date.getDay(); //返回当前星期
+				// 写一个符合中国人时间的日期
+				// 2020年 2月 24日 星期四
+				return (
+					"当前时间为：" +
+						date1 +
+						"年" +
+						date2 +
+						"月" +
+						date3 +
+						"日星期" +
+						arr[date7] +
+						date.getHours() +
+						"时" +
+						date.getMinutes() +
+						"分" +
+						date.getSeconds() +
+						"秒"
+				);
+			}
+			// 返回当前时间
+			// function times() {
+			// 	var date = +new Date();
+
+			// 	return "当前时间为:" + d + ":" + h + ":" + m + ":" + s;
+			// }
+			var time = document.getElementById("times");
+			var div = document.querySelector("div");
+			var p = document.querySelector('p')
+			time.onclick = function () {
+				div.innerText = ciuntDown();
+
+			};
+			p.innerText = ciuntDown()
+		</script>
+	</body>
+</html>

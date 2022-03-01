@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			div {
+				/* border: 1px solid red; */
+				margin: 0 auto;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			p {
+				height: 40px;
+				line-height: 40px;
+				font-size: 24px;
+				color: #666;
+				margin: 100px auto 10px;
+				width: 700px;
+				border-radius: 20px;
+				text-align: center;
+				background-color: purple;
+				color: white;
+			}
+			img {
+				height: 400px;
+				width: 700px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p>上 午 好</p>
+			<img src="image/t014ee5db694bc4b1bb.jpg" alt="" />
+		</div>
+		<script>
+			var p = document.querySelector("p");
+			var img = document.querySelector("img");
+            var date = new Date();
+			var time = date.getHours();
+			// var time = 19;
+            // console.log(time)
+			if (time >= 8 && time <= 12) {
+				p.innerHTML = "上午好";
+				img.src = "image/t014ee5db694bc4b1bb.jpg";
+			} else if (time > 12 && time <= 18) {
+				p.innerHTML = "下午好";
+				img.src = "image/R-C2.jpg";
+			}else{
+                p.innerHTML = "晚上好";
+				img.src = "image/Y7kTnOIDG6_small.jpg";
+            }
+		</script>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="btn">123</div>
+    <script>
+        // 点击div 显示你被选中了
+        // (1) 获取事件源
+        var div = document.getElementById('btn')
+        // (2) 事件触发的要素
+        div.onclick = function(){
+            // 事件触发后的运行程序
+            alert('你被选中了')
+        }
+    </script>
+</body>
+</html>

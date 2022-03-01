@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			input {
+				outline: none;
+			}
+			.box {
+				position: relative;
+				width: 400px;
+				border-bottom: 1px solid #ccc;
+				margin: 100px auto 10px;
+			}
+			input {
+				width: 370px;
+				height: 30px;
+				border: 0;
+			}
+			/* 查看密码的眼睛图片 */
+			/* label{
+            border: 1px solid red;
+        } */
+			label img {
+				position: absolute;
+				top: 3px;
+				right: 3px;
+				width: 24px;
+				/* height: 20px; */
+			}
+			p {
+				/* border: 1px solid red; */
+				display: none;
+				width: 400px;
+				height: 24px;
+				margin: auto;
+				color: #999;
+				/* line-height: 24px; */
+				text-align: right;
+			}
+			p span {
+				display: inline-block;
+				/* display: none; */
+				width: 30px;
+				height: 18px;
+				background-color: red;
+				vertical-align: middle;
+				margin: 0 20px;
+				color: white;
+				font-size: 14px;
+				text-align: center;
+				line-height: 18px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<label for="">
+				<img src="images/OIP-C.jpg" alt="" />
+			</label>
+			<input type="password" name="" id="" />
+		</div>
+		<p>当前密码强度为: <span>弱</span></p>
+		<script>
+			var img = document.querySelector("img");
+			var input = document.querySelector("input");
+			var flay = 0;
+			var p = document.querySelector("p");
+			var span = document.querySelector("span");
+			img.onclick = function () {
+				if (flay == 0) {
+					img.src = "images/R-C.jpg";
+					input.type = "text";
+					flay = 1;
+				} else {
+					img.src = "images/OIP-C.jpg";
+					input.type = "password";
+					flay = 0;
+				}
+			};
+			input.onblur = function () {
+				if (input.value.length > 3  && input.value.length <= 7) {
+					p.style.display = "block";
+					span.innerHTML = "弱";
+					span.style.backgroundColor = "red";
+				} else if (input.value.length > 7 && input.value.length <= 10) {
+					p.style.display = "block";
+					span.innerHTML = "中";
+					span.style.color = 'white'
+					span.style.backgroundColor = "orange";
+				} else if (input.value.length > 10) {
+					p.style.display = "block";
+					span.innerHTML = "强";
+					span.style.backgroundColor = "green";
+				}
+			};
+		</script>
+	</body>
+</html>

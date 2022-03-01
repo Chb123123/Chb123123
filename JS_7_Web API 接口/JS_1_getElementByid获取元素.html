@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = 'time'>
+        2020-9-9
+    </div>
+    <ul>
+        <li>知否知否，应是等你好久</li>
+        <li>知否知否，应是等你好久</li>
+        <li>知否知否，应是等你好久</li>
+        <li>知否知否，应是等你好久</li>
+        <li>知否知否，应是等你好久</li>
+    </ul>
+    <ol>
+        <li>老铁六六六</li>
+        <li>老铁六六六</li>
+        <li>老铁六六六</li>
+        <li>老铁六六六</li>
+    </ol>
+    <script>
+        // 因为文档页面从上往下加载，所有得先有标签 所有 script 要写在下面
+        // 返回的是一个对象
+        var timer =  document.getElementById('time')
+        console.log(timer)
+        console.dir(timer)
+        // 根据标签名获取 所有getElementsByTagName() 方法返回带有指定标签名的对象的集合
+        var str = document.getElementsByTagName('li')
+        console.dir(str)
+        // 获取的元素是伪数组的形势 可以采取遍历的方式打印出来
+        // 如果页面里面只有一个 li 返回的也是一个伪数组 如果页面里面没有这个元素，返回的是一个空的伪数组 
+        for(i = 0;i < str.length;i ++){
+            console.log(str[i])
+        }
+        console.log(typeof str)
+    </script>
+</body>
+</html>
