@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+        <style>
+            .father{
+                position: relative;
+                width: 200px;
+                height: 200px;
+                margin: 100px auto;
+                /* border: 1px solid red; */
+                background-color: yellow;
+            }
+            .son{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: red;
+                width: 100px;
+                height: 100px;
+                line-height: 100px;
+                text-align: center;
+                color: white;
+
+            }
+        </style>
+	</head>
+	<body>
+		<div class="father">
+			
+			<div class="son">子盒子</div>
+		</div>
+		<script>
+			// js代码中只能执行捕获阶段或者冒泡阶段
+			// onclick 和 addEventlistener(ie) 只能得到冒泡排序
+			// 如果 addEventlistener 第三个参数为 true 那么代码为捕获阶段
+			var son = document.querySelector(".son");
+			son.addEventListener(
+				"click",
+				function () {
+					alert("你好");
+				},
+				false
+			);
+			var father = document.querySelector(".father");
+			father.addEventListener(
+				"click",
+				function () {
+					alert("你不好");
+				},
+				false
+			);
+		</script>
+	</body>
+</html>
