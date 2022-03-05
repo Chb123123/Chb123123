@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按我</button>
+    <button>按它</button>
+    <script>
+        var buttons = document.querySelectorAll('button')
+        // 传统注册事件 
+        buttons[0].onclick = function(){
+            alert('按我干嘛')
+        }
+        
+        // 事件监听注册事件 addEventListener('注册事件，不需要带 on'， 事件执行的代码)
+        // 可以执行多个执行代码
+        buttons[1].addEventListener('click',function(){
+            alert('都说了按他')
+        })
+        buttons[1].addEventListener('click',function(){
+            alert('按我干嘛')
+        })
+    </script>
+</body>
+</html>

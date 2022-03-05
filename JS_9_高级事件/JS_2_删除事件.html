@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <script>
+        var button = document.querySelectorAll('button')
+        // 传统解绑事件
+        button[0].onclick = function(){
+            alert('我的乖乖')
+            // 将事件解绑
+            button[0].onclick = null
+        }
+        // 想要删除事件 不能使用匿名函数
+        button[1].addEventListener('click', fn)  // 添加函数时不需要在函数后面添加括号，直接写函数名就行
+        function fn(){
+            alert('老铁没毛病')
+            // 删除事件
+            button[1].removeEventListener('click', fn)
+        }
+    </script>
+</body>
+</html>
