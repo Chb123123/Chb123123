@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			// 数组去重
+            // 遍历旧数组，判断是否在新数组当中，如果不在，则将数组元素添加在新数组当中，如果在，则不做任何操作
+			var arr = [1, 2, 3, 4, 5, 6, 2, 6, 9, 0, 0];
+			var arr1 = [];
+			for (i = 0; i < arr.length; i++) {
+				if (arr1.indexOf(arr[i]) == -1) {
+					arr1.push(arr[i]);
+				}
+			}
+			arr1.sort(function (a, b) {
+				return b - a;
+			});
+			console.log(arr1);
+			// function randex(min, max) {
+			// 	return Math.floor(Math.random * (max - min + 1) + min);
+			// }
+		</script>
+	</head>
+	<body></body>
+</html>

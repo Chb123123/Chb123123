@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 绝对值的方法
+        console.log(Math.abs(-2));
+        console.log(Math.abs('-1')) //它具有隐式转换
+        // 三个数的取整
+        // (1) 向上取整 小数点后面的数值直接进 1
+        console.log(Math.ceil(1.2)) // 2
+        console.log(Math.ceil(1.03)) // 2
+        console.log(Math.ceil(1.0))  // 1
+        // (2) 向下取整 直接把小数后面的数字去掉 往小取整
+        console.log(Math.floor(1.2)) // 1
+        console.log(Math.floor(1.9)) // 1
+        // (3) 四舍五入取整 Math.round()
+        console.log(Math.round(1.2))
+        console.log(Math.round(1.9))
+        console.log(Math.round(1.5))
+        console.log(Math.round(-1.1))  // -1
+        console.log(Math.round(-1.5)) //-1 负值四舍五入
+        console.log(Math.round(-11.5)) //-1 负值四舍五入 .5 往大取，谁大取谁
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

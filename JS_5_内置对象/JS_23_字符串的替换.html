@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 替换字符串 replace('被替换的字符'，'替换的字符')
+        // 只会替换掉第一个元素 ，后面有相同的元素不会替换掉
+        var str = '娘子,啊哈,娘子'
+        console.log(str.replace('娘子','老公'))
+        console.log(str)
+        // 将字符串里面的所有相同元素全部替换 将 a 替换为 z
+        var str1 = 'abcdabcdabcd'
+        while (str1.indexOf('a') !== -1){
+            str1 = str1.replace('a','z')
+        }
+        console.log(str1)
+        // 字符串转换为数组 split('分隔符') 前面学过 join 把数组转换为字符串
+        var str2 = 'a,s,d,f,g,h'
+        console.log(str2.split(','))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

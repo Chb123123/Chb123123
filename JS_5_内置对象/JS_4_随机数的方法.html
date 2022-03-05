@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // console.log(Math.ceil(Math.random() * 100))
+        // 获取两个随机整数 并且包含这两个数
+        function geyRandom(min, max){
+            return Math.floor(Math.random() * (max -min + 1) + min)
+        }
+        console.log(geyRandom(1,10))
+        // 随机点名
+        var arr = ['老大','老二','张三', '李四', '王五', '老六', '老七','老八','老赵'];
+        console.log(arr[geyRandom(0,arr.length - 1)])
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

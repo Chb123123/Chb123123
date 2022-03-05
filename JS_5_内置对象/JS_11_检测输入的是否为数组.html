@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			// 翻转数组的案例
+			function reverse(arr) {
+				if (arr instanceof Array == true) {
+					var arr1 = [];
+					for (i = arr.length - 1; i >= 0; i--) {
+						arr1[arr1.length] = arr[i];
+					}
+					return arr1;
+				} else {
+					return "你输入的不是数组,无法翻转！";
+				}
+			}
+            console.log(reverse(12,3,4,5))
+            console.log(reverse([1,2,3,4,5,6,7]))
+            // 第二个判断数组的方法 Array.isArray
+            console.log(Array.isArray(123))
+		</script>
+	</head>
+	<body></body>
+</html>

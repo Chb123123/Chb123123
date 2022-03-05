@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			var str = "abaasdffgggjjjjkkgfddssssss33344455689584949y";
+			// 获取字符串的长度
+			var leng = str.length;
+			console.log(leng);
+			// 取出指定位置的字符
+			console.log(str[0], str[3], str[5], str[0]);
+			// 查找字符是否在字符串当中 例如 a,z,v 等
+			if (str.indexOf("a") !== -1) {
+				console.log("在里面");
+			} else {
+				console.log("不在里面");
+			}
+			//替换指定字符 例如 1-5 之间的字符
+			console.log(str.slice(1,5));
+			// 找出以上字符串当中出现次数最多的字符和出现的次数
+			var ojb = {};
+			for (i = 0; i < str.length; i++) {
+				var char1 = str.charAt(i);
+				if (ojb[char1]) {
+					ojb[char1]++;
+				} else {
+					ojb[char1] = 1;
+				}
+			}
+			console.log(ojb);
+            var max = 0;
+            var key;
+            for(k in ojb){
+                if(max < ojb[k]){
+                    max = ojb[k]
+                    key = k;
+                }
+            }
+            console.log('字符串里面出现最多的字符为：'+key+'出现的次数为：'+max)
+		</script>
+	</head>
+	<body></body>
+</html>

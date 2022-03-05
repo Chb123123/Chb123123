@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			// time 输入倒计时的最后时间
+			function ciuntDown(time) {
+				var date = +new Date(time);
+				// var date1 = new Date();
+				// count 就是总的毫秒数
+				var count = date - +new Date();
+				var lave = Math.floor(count / 1000); // 剩余的秒数
+				var d = Math.floor(lave / 60 / 60 / 24); //剩余的天数
+				d = d < 10 ? "0" + d : d;
+				var h = Math.floor((lave / 60 / 60) % 24); // 剩余的小时
+				h = h < 10 ? "0" + h : h;
+				var m = Math.floor((lave / 60) % 60); // 剩余的分钟
+				m = m < 10 ? "0" + m : m;
+				var s = Math.floor(lave % 60); // 剩余的秒钟
+				s = s < 10 ? "0" + s : s;
+				return d + "天 " + h + "小时" + m + "分" + s + "秒"; // 返回剩余的时间
+			}
+			console.log(ciuntDown("2022-2-26 0:0:0"));
+            // 返回随机数
+			function rande(min, max) {
+				return Math.floor(Math.random() * (max - min - 1) + min);
+			}
+		</script>
+	</head>
+	<body></body>
+</html>

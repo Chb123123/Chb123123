@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			// 删除数组当中大于 2000 的元素 并把剩余的数组存放在新的数组内
+			function filter(arr) {
+				var arr1 = [];
+				if (Array.isArray(arr)) {
+					for (i = 0; i < arr.length; i++) {
+						if (arr[i] < 2000) {
+							arr1.push(arr[i]);
+						} else {
+							continue;
+						}
+					}
+				} else {
+					return "你输入的不是数组,请重新输入";
+				}
+				return arr1;
+			}
+			console.log(filter([1500, 1200, 2000, 2100, 1800]));
+			console.log(filter(1500));
+		</script>
+	</head>
+	<body></body>
+</html>

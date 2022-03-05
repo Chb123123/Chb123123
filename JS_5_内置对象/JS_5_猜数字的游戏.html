@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			var number = geyRandom(1,100)
+            var frequency = 5;
+            while (true){
+                var num = parseInt(prompt('猜猜我是多少(1~100之间), 还有' + frequency+'次机会哟！'));
+                if(num > number){
+                    alert('你猜的数字大了点')
+                }else if(num == number){
+                    alert('恭喜你！猜对了！')
+                    break;
+                }else{
+                    alert('你猜的数字有点小')
+                }
+                frequency--;
+                if (frequency == 0){
+                    alert('你太菜了，下次别来了')
+                    break;
+                }
+            }
+            function geyRandom(min,max){
+                return Math.floor(Math.random() * (max - min + 1) + min)
+            }
+		</script>
+	</head>
+	<body></body>
+</html>

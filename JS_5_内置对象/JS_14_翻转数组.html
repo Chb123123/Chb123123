@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			// 翻转数组 revarse
+			var arr = [1, 2, 3, 4, 5, 6, 7];
+			arr.reverse();
+			console.log(arr);
+			// 数组排序(冒泡排序) sort 只能比较个位上的排序，一旦数值超过 10 scrt就不起效果
+			// 解决方法 将sort 添加一个函数
+			arr.sort();
+			console.log(arr);
+            var arr1 = [12, 34, 2, 24, 56, 87];
+			arr1.sort(function (a, b) {
+				// return a - b; // a - b 为升序
+                return b - a;  // b - a 降序的顺序排列
+			});
+			
+            // arr1.sort()
+            console.log(arr1)
+		</script>
+	</head>
+	<body></body>
+</html>
