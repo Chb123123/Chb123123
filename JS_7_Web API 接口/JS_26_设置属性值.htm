@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="index" name="123"></div>
+    <script>
+        var div = document.querySelector('div')
+        div.id = '1'  //将 div 属性改为1
+        console.log(div.id)
+        div.setAttribute('name', '8') // 将自定义属性 name 改为 8
+        console.log(div.getAttribute('name'))
+        // 移除属性 removeAttribute('属性')
+        div.removeAttribute('name')
+        console.log(div.getAttribute('name'))
+    </script>
+</body>
+</html>

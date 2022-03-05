@@ -10,21 +10,24 @@
 		<button>按钮1</button>
 		<button>按钮2</button>
 		<button>按钮3</button>
-        <button>按钮4</button>
+		<button>按钮4</button>
 		<button>按钮5</button>
-        <script>
-            // 获取所有按钮
-            var btn = document.getElementsByTagName('button')
-            for(var i = 0; i < btn.length; i++){
-                btn[i].onclick = function(){
-                    // 先将所有按钮的背景颜色全部去掉
-                    for(i = 0; i < btn.length; i++){
-                        btn[i].style.backgroundColor = '';
-                    }
-                    // 在将点击的当前元素背景颜色变为粉色
-                    this.style.backgroundColor = 'pink'
-                }
-            }
-        </script>
+		<script>
+			// 获取所有按钮
+			var btn = document.getElementsByTagName("button");
+			for (i = 0; i < btn.length; i++) {
+				// 在点击元素的时候先清空所有元素的背景色
+				btn[i].onclick = function () {
+					for (j = 0; j < btn.length; j++) {
+						// 将所有背景颜色设为空
+						btn[j].style.backgroundColor = "";
+					}
+					// console.log(11)
+					// 点击当前元素背景颜色改为 pink 色
+					this.style.backgroundColor = "pink";
+				};
+			}
+        // 首相排除其他人, 然后再设置自己的样式,这样的思想为排他思想
+		</script>
 	</body>
 </html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .tab{
+            width: 1000px;
+            height: 500px;
+            /* border: 1px solid red; */
+            margin: 100px auto;
+        }
+        .tab_list{
+            border-bottom: 1px solid red;
+            background-color: #eee;
+        }
+        .tab_list li{
+            float: left;
+            /* border: 1px solid red; */
+            padding: 10px 30px;
+        }
+        .bg{
+            background-color: red;
+            color: white;
+        }
+        .tab_com{
+            border-bottom: 1px solid red;
+            /* background-color: rgb(); */
+        }
+        .tab_con{
+            display: none;
+            font-size: 12px;
+            /* border: 1px solid red; */
+            box-sizing: border-box;
+            padding-left: 60px;
+            overflow: hidden;
+        }
+        .tab_con li{
+            float: left;
+            width: 200px;
+            /* border: 1px solid red; */
+            margin-right: 30px;
+        }
+        .tab_con li span{
+            display: block;
+            width: 200px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        .show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul style="overflow: hidden;">
+                <li class="bg">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+    
+    <div class="tab_com">
+        <div class="tab_con show">
+            <p style="margin: 20px 0;">品牌: <a href="#">拓威克(TOOVE)</a></p>
+            <ul>
+                <li>
+                    <span>商品名称：拓威克（TOOVE）坦能T</span>
+                    <span>商品产地：中国大陆</span>
+                    <span>吸头数量：3个以下</span>
+                </li>
+                <li>
+                    <span>商品编号：10026400687383</span>
+                    <span>货号：坦能T5680</span>
+                </li>
+                <li>
+                    <span>店铺：<a href="#">拓威克旗舰店</a></span>
+                    <span>特色功能：拖地功能</span>
+                </li>
+                <li>
+                    <span>商品毛重：1.0kg</span>
+                    <span>吸力：151-180AW</span>
+                </li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            规格与包装内容
+        </div>
+        <div class="tab_con">
+            售后保障内容
+        </div>
+        <div class="tab_con">
+            商品评价内容
+        </div>
+        <div class="tab_con">
+            手机社区内容
+        </div>
+    </div>
+</div>
+<script>
+    var nav = document.querySelector('.tab_list').querySelectorAll('li')
+
+    var present = document.querySelector('.tab_com').querySelectorAll('.tab_con')
+    console.log(present)
+    for(var i = 0; i < nav.length; i++){
+        nav[i].setAttribute('index',i)
+        nav[i].onclick = function(){
+            for(i = 0; i < nav.length; i++){
+                nav[i].className = '';
+                present[i].className = 'tab_con'
+            }
+            this.className = 'bg'
+            // present[i].className = 'tab_con show'
+            // console.log(this.class)
+            console.log(this.getAttribute('index'))
+            present[this.getAttribute('index')].className = 'tab_con show';
+        }
+    }
+    
+    // console.log(present)
+    // for(var j = 0; j < present.length; j++){
+        
+    // }
+</script>
+</body>
+</html>

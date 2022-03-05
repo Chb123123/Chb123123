@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			table {
+				width: 1000px;
+				/* height: 500px; */
+				/* border: 1px solid red; */
+				margin: 50px auto;
+			}
+			thead th {
+				/* border: 1px solid red; */
+				background-color: blue;
+				color: white;
+			}
+			tbody tr {
+				background-color: #666;
+				text-align: center;
+                color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<thead>
+				<tr>
+					<th>代码</th>
+					<th>代码</th>
+					<th>最新公布净值</th>
+					<th>累计净值</th>
+					<th>前单位净值</th>
+					<th>净值增长率</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>003526</td>
+					<td>农业银行3个月定期开放债券</td>
+					<td>1.075</td>
+					<td>1.079</td>
+					<td>1.074</td>
+					<td>+0.047%</td>
+				</tr>
+				<tr>
+					<td>003526</td>
+					<td>农业银行3个月定期开放债券</td>
+					<td>1.075</td>
+					<td>1.079</td>
+					<td>1.074</td>
+					<td>+0.047%</td>
+				</tr>
+				<tr>
+					<td>003526</td>
+					<td>农业银行3个月定期开放债券</td>
+					<td>1.075</td>
+					<td>1.079</td>
+					<td>1.074</td>
+					<td>+0.047%</td>
+				</tr>
+				<tr>
+					<td>003526</td>
+					<td>农业银行3个月定期开放债券</td>
+					<td>1.075</td>
+					<td>1.079</td>
+					<td>1.074</td>
+					<td>+0.047%</td>
+				</tr>
+				<tr>
+					<td>003526</td>
+					<td>农业银行3个月定期开放债券</td>
+					<td>1.075</td>
+					<td>1.079</td>
+					<td>1.074</td>
+					<td>+0.047%</td>
+				</tr>
+			</tbody>
+		</table>
+		<script>
+			var trBg = document.querySelector("tbody").querySelectorAll("tr");
+			// console.log(trBg)
+			for (i = 0; i < trBg.length; i++) {
+				trBg[i].onmouseover = function () {
+                    for(i = 0; i < trBg.length; i++){
+                        trBg[i].style.backgroundColor = '';
+                    }
+					this.style.backgroundColor = "red";
+				};
+                trBg[i].onmouseout = function(){
+                    for(i = 0; i < trBg.length; i++){
+                        trBg[i].style.backgroundColor = '';
+                    }
+                }
+			}
+		</script>
+	</body>
+</html>

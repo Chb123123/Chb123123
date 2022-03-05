@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="name" data-index="00",data-color="red"></div>
+    <script>
+        var div = document.querySelector('div')
+        console.log(div.getAttribute('data-index'))
+        // 添加自定义属性
+        div.setAttribute('data-num-list','10')
+        console.log(div.getAttribute('data-num-list'))
+        // H5 新增的获取自定义属性的方法
+        console.log(div.dataset.index)
+        // 如果命名的自定义属性比较长 就必须采用驼峰命名法获取
+        console.log(div.dataset.numList)
+    </script>
+</body>
+</html>

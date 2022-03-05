@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.container {
+				display: flex;
+				width: 500px;
+				height: 70px;
+				/* border: 1px solid red; */
+				margin: 100px auto;
+			}
+			.container li {
+				width: 20%;
+				height: 70px;
+				list-style: none;
+				/* border: 2px solid white; */
+				/* box-sizing: border-box; */
+			}
+			.container li a {
+				display: block;
+				background-color: purple;
+				width: 100%;
+				height: 100%;
+			}
+			.container li a img {
+				display: block;
+				border: 1px solid white;
+				height: 100%;
+				width: 100%;
+			}
+			.border {
+				border-color: red;
+			}
+			/* .container li:nth-child(1) a {
+				background: url(image/R-C1.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+			.container li:nth-child(2) a {
+				background: url(image/R-C2.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+			.container li:nth-child(3) a {
+				background: url(image/R-C3.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+			.container li:nth-child(4) a {
+				background: url(image/R-C4.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+			.container li:nth-child(5) a {
+				background: url(image/R-C5.jpg) no-repeat;
+				background-size: 100% 100%;
+			} */
+			body {
+				background: url(image/R-C1.jpg) no-repeat;
+				background-size: 100% auto;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="container">
+			<li>
+				<a href="#"><img src="image/R-C1.jpg" /></a>
+			</li>
+			<li>
+				<a href="#"><img src="image/R-C2.jpg" /></a>
+			</li>
+			<li>
+				<a href="#"><img src="image/R-C3.jpg" /></a>
+			</li>
+			<li>
+				<a href="#"><img src="image/R-C4.jpg" /></a>
+			</li>
+			<li>
+				<a href="#"><img src="image/R-C5.jpg" /></a>
+			</li>
+		</ul>
+		<script>
+			var lis = document.querySelector(".container").querySelectorAll("img");
+			// console.log(lis)
+			var bg = document.querySelector("body");
+			console.log(bg);
+			for (i = 0; i < lis.length; i++) {
+				lis[i].onclick = function () {
+					for (i = 0; i < lis.length; i++) {
+						// 点击前将所有图片边框改为 白色
+						lis[i].style.borderColor = "white";
+					}
+					// 将点击的图片改为红色
+					this.style.borderColor = "yellow";
+					document.body.style.backgroundImage = "url(" + this.src + ")";
+				};
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			table {
+				width: 300px;
+				margin: 50px auto;
+				border-collapse: collapse;
+				text-align: center;
+			}
+			thead td {
+				border: 1px solid #666;
+				background-color: blue;
+				color: white;
+			}
+			tbody tr {
+				border: 1px solid #ccc;
+				background-color: aquamarine;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<thead>
+				<tr>
+					<td><input type="checkbox" name="" id="" /></td>
+					<td>商品</td>
+					<td>价钱</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="checkbox" name="" id="" /></td>
+					<td>iPhone8</td>
+					<td>8000</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="" id="" /></td>
+					<td>iPhone8</td>
+					<td>8000</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="" id="" /></td>
+					<td>iPhone8</td>
+					<td>8000</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="" id="" /></td>
+					<td>iPhone8</td>
+					<td>8000</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="" id="" /></td>
+					<td>iPhone8</td>
+					<td>8000</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="" id="" /></td>
+					<td>iPhone8</td>
+					<td>8000</td>
+				</tr>
+			</tbody>
+		</table>
+		<script>
+            var tdBg = document.querySelector("tbody").querySelectorAll("tr");
+            // console.log(trBg)
+			var tds = document.querySelector("thead").querySelector("input");
+			var tds1 = document.querySelector("tbody").querySelectorAll("input");
+			// console.log(tds1)
+            // for (j = 0; j < trBg.length; j++) {
+			// 	trBg[j].onmouseover = function () {
+            //         for(i = 0; i < trBg.length; i++){
+            //             trBg[i].style.backgroundColor = '';
+            //         }
+			// 		this.style.backgroundColor = "red";
+			// 	};
+            //     trBg[j].onmouseout = function(){
+            //         for(i = 0; i < trBg.length; i++){
+            //             trBg[i].style.backgroundColor = '';
+            //         }
+            //     }
+			// }
+			for (j = 0; j < tdBg.length; j++) {
+				tdBg[j].onmouseover = function () {
+                    // console.log(11)
+                    
+					this.style.backgroundColor = "pink";
+				};
+				tdBg[j].onmouseout = function () {
+					this.style.backgroundColor = "";
+                    // console.log(11)
+				};
+			}
+			// 全选按钮，如果点击全选按钮，则复选框全选 this.checked 表示全选按钮的状态
+			tds.onclick = function () {
+				for (i = 0; i < tds1.length; i++) {
+					tds1[i].checked = this.checked;
+					// console.log(tds1[i].checked.length);
+				}
+			};
+			for (i = 0; i < tds1.length; i++) {
+				tds1[i].onclick = function () {
+					var flay = true;
+					// 循环所有 tbody 里面的checked,如果有一个没有选上，则flay一直为 false
+					for (i = 0; i < tds1.length; i++) {
+						if (!tds1[i].checked) {
+							flay = false;
+						}
+					}
+					tds.checked = flay;
+				};
+			}
+		</script>
+	</body>
+</html>

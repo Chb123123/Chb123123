@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="deom" name="chb"></div>
+    <script>
+        var div = document.querySelector('div')
+        // (enenent.属性) 只能获取定义的属性
+        console.log(div.id)
+        console.log(div.name)  // 为空
+        // (element.getAtteribute('属性')) 可以获取自定义属性
+        console.log(div.getAttribute('id'))
+        console.log(div.getAttribute('name'))  // 可以获取 chb
+    </script>
+</body>
+</html>
