@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="andy">
+			<span class="box"></span>
+		</div>
+		<ul>
+			<li>111</li>
+			<li>111</li>
+			<li>111</li>
+			<li>111</li>
+			<li>111</li>
+		</ul>
+        <ol>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+        <div class="filse"></div>
+        <span>老铁没毛病</span>
+		<script>
+			// 获取父节点 parentNode 获取的是最近的父节点
+			var span = document.querySelector(".box");
+			console.log(span.parentNode);
+            // (1)获取子节点 childNodes 它获取的是所有的节点
+            var ul = document.querySelector('ul')
+            console.log(ul.childNodes)
+            var lis = [];
+            // 如果想要获取子元素节点 要经过特殊的处理
+            for(i = 0; i < ul.childNodes.length; i++){
+                if(ul.childNodes[i].nodeType == 1){
+                    lis[lis.length] = ul.childNodes[i]
+                }
+            }
+            console.log(lis)
+            // (2) children 获取所有的子元素节点 
+            console.log(ul.children)
+
+            // 获取元素节点的第一个元素 和最后一个元素
+            var ol = document.querySelector('ol')
+            // firstChild 返回的是元素的第一个子节点 包括文本节点
+            console.log(ol.firstChild)
+            // firstElementChild 获取的是第一个子节点的 元素节点
+            console.log(ol.firstElementChild)
+            // lastElementChild 获取的是子节点的最后一个元素节点
+            console.log(ol.lastElementChild)
+            
+            // (1)兄弟节点 node.nextSibling 获取下一个兄弟的节点 包含文本节点 
+            var filse = document.querySelector('.filse')
+            console.log(filse.nextSibling)
+            // node.nextElemnetSibling  获取下一个兄弟的元素节点
+            console.log(filse.nextElementSibling)
+            // (2) 获取上一个兄弟的节点 previousSibling
+            console.log(filse.previousSibling)
+            // previonsElementSibling 获取上一个兄弟的元素节点
+            console.log(filse.previousElementSibling)
+		</script>
+	</body>
+</html>

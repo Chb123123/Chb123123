@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			a {
+				text-decoration: none;
+				color: #666;
+			}
+			li {
+				list-style: none;
+			}
+			.nav {
+				display: flex;
+				align-content: space-around;
+				/* justify-content: center; */
+				/* border: 1px solid red; */
+				width: 250px;
+				height: 200px;
+				margin: 100px auto;
+				/* float: left; */
+			}
+			.nav li {
+				position: relative;
+				flex: 33.33%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			.nav li a {
+				display: block;
+				width: 100%;
+				height: 30px;
+				line-height: 30px;
+				/* border: 1px solid red; */
+				text-align: center;
+                background-color: #ccc;
+			}
+            .nav li a:hover{
+                background-color: blue;
+                color: white;
+            }
+			.nav li ul {
+				display: none;
+				position: absolute;
+				left: 50%;
+				top: 30px;
+				transform: translateX(-50%);
+				/* border: 1px solid red; */
+			}
+			.nav li ul li {
+				border-bottom: 1px solid red;
+				border-top: 0;
+				width: 80px;
+				height: 30px;
+				line-height: 30px;
+                background-color: #eee;
+                cursor: pointer;
+			}
+            .nav li ul li:hover{
+                background-color: red;
+            }
+		</style>
+	</head>
+	<body>
+		<ul class="nav">
+			<li>
+				<a href="#">微博</a>
+				<ul>
+					<li>私信</li>
+					<li>私信</li>
+					<li>lao</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">微信</a>
+				<ul>
+					<li>私信</li>
+					<li>私信</li>
+					<li>私信</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">私信</a>
+				<ul>
+					<li>私信</li>
+					<li>私信</li>
+					<li>私信</li>
+				</ul>
+			</li>
+		</ul>
+		<script>
+			// var as = document.querySelectorAll("a");
+			// console.log(as);
+			// var uls = document.querySelector(".nav").querySelectorAll("ul");
+			// console.log(uls);
+			// for (i = 0; i < as.length; i++) {
+			// 	as[i].onmouseover = function () {
+			// 		// console.log(11)
+			// 		for (i = 0; i < as.length; i++) {
+			// 			uls[i].setAttribute("data-index", i);
+			// 			as[i].style.borderColor = "";
+            //             as[i].style.color = '';
+            //             as[i].style.backgroundColor = '';
+			// 			// uls[i].style.display = 'none'
+			// 			// console.log(uls[i].gteAttribute("data-index"));
+
+			// 			// uls[uls[i].gteAttribute("data-index")].style.display = "block";
+			// 		}
+			// 		this.style.borderColor = "yellow";
+			// 		this.style.color = "white";
+            //         this.style.backgroundColor = 'blue'
+			// 		console.log(uls[i].gteAttribute("data-index"));
+			// 		// uls[uls[i].gteAttribute('data-index')].style.display = "block";
+			// 	};
+            //     // as[i].onmouseout = function(){
+            //     //     as[i].color = '';
+            //     // }
+			// }
+            // var lis = document.querySelector(".nav").querySelectorAll("ul").children;
+            // console.log(lis)
+            var nav = document.querySelector('.nav')
+            var lis = nav.children;
+            console.log(lis)
+            for(var i = 0; i < lis.length; i++){
+                lis[i].onmouseover = function(){
+                    this.children[1].style.display = 'block'
+                }
+                lis[i].onmouseout = function(){
+                    this.children[1].style.display = 'none'
+                }
+                
+            }
+		</script>
+	</body>
+</html>

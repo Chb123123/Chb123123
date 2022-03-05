@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			li {
+				list-style: none;
+			}
+			.message {
+				margin: 50px auto 20px;
+				border: 1px solid #ccc;
+				width: 100px;
+			}
+			.message li {
+				text-align: center;
+				height: 30px;
+				width: 100px;
+				line-height: 30px;
+				border-bottom: 1px solid #ccc;
+			}
+			.del {
+				display: block;
+				margin: auto;
+				width: 80px;
+				height: 30px;
+				font-size: 16px;
+				background-color: aqua;
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="message">
+			<li>喜羊羊</li>
+			<li>美羊羊</li>
+			<li>懒羊羊</li>
+			<li>沸羊羊</li>
+		</ul>
+		<button class="del">删除</button>
+		<script>
+			var del = document.querySelector(".del");
+			var ul = document.querySelector(".message");
+			// var lis = document.querySelector('.message').querySelectorAll('li')
+			del.onclick = function () {
+				if (ul.children.length > 0) {
+					// 删除节点： node.removeChild(child)
+					ul.removeChild(ul.children[0]);
+				}else{
+                    this.disabled = true;
+                }
+			};
+		</script>
+	</body>
+</html>

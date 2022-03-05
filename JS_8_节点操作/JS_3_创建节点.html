@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>123</li>
+    </ul>
+    <script>
+        // document.createElement('tagName') 动态生成节点
+        var ul = document.querySelector('ul')
+        var li = document.createElement('li')  // 创捷节点
+        ul.appendChild(li)  // 添加节点 父节点.appendChild(生成的节点) 在元素的后面添加节点
+        // 在元素的前面添加节点  父节点.insertBefore(生成的节点, 放在谁的前面)
+        var lis = document.createElement('li')
+        ul.insertBefore(lis, ul.children[0]) 
+    </script>
+</body>
+</html>

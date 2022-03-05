@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="name"></div>
+		<ul></ul>
+		<script>
+			var div = document.querySelector("div");
+			// for(var i = 0; i < 1000; i++){
+			//     div.innerHTML += '<a href="javascript:;">删除</a>';
+			// }
+			var time = +new Date();
+			
+			var arr = [];
+			for (var i = 0; i < 1000; i++) {
+				arr[i] = '<a href="#">删除</a>';
+			}
+			div.innerHTML = arr.join('');
+            var time2 = +new Date();
+			console.log(time2 - time);
+			console.log(arr);
+			var time1 = +new Date();
+			var ul = document.querySelector("ul");
+			var lis = document.createElement("li");
+			ul.appendChild(lis);
+			for (i = 0; i < 1000; i++) {
+				lis.innerHTML += "你好";
+			}
+
+			console.log(time1 - time2);
+			// 在大量的拼接字符时 createElement() 运行效率会比 innreHTML 快
+		</script>
+	</body>
+</html>

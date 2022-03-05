@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			li {
+				list-style: none;
+				/* background-color: red; */
+				width: 198px;
+				height: 30px;
+				line-height: 30px;
+				border: 1px solid #ccc;
+				margin-bottom: 10px;
+			}
+            input{
+                outline-style: none;
+            }
+			.box {
+				/* border: 1px solid red; */
+				width: 200px;
+				margin: 50px auto;
+				overflow: hidden;
+			}
+			ul {
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<textarea rows="5" cols="20" style="vertical-align: bottom"></textarea>
+			<input type="button" value="发表" class="buttom" />
+			<ul></ul>
+		</div>
+		<script>
+			var btn = document.querySelector(".buttom");
+			// console.log(btn)
+			// 获取用户输入的信息
+			var input = document.querySelector("textarea");
+
+			var uls = document.querySelector("ul");
+			console.log(uls);
+			btn.onclick = function () {
+				
+				if (!input.value == "") {
+                    var lis = document.createElement("li");
+					uls.insertBefore(lis, uls.children[0]);
+					// 将用户输入的信息添加在新增的li里面
+					// console.log(input.value)
+					uls.children[0].innerHTML = input.value;
+					input.value = "";
+				} else {
+					alert("发布的内容不能为空");
+				}
+			};
+		</script>
+	</body>
+</html>

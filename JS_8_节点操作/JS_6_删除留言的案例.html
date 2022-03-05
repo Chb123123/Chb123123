@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			li {
+				position: relative;
+				list-style: none;
+				/* background-color: red; */
+				width: 198px;
+				height: 30px;
+				line-height: 30px;
+				border: 1px solid #ccc;
+				margin-bottom: 10px;
+			}
+			li a {
+				cursor: pointer;
+				position: absolute;
+				right: 5px;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 30px;
+				height: 20px;
+				text-decoration: none;
+				font-size: 12px;
+				background-color: red;
+				line-height: 20px;
+				text-align: center;
+				color: white;
+			}
+			input {
+				outline-style: none;
+			}
+			.box {
+				/* border: 1px solid red; */
+				width: 200px;
+				margin: 50px auto;
+				overflow: hidden;
+			}
+			ul {
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<textarea rows="5" cols="20" style="vertical-align: bottom"></textarea>
+			<input type="button" value="发表" class="buttom" />
+			<ul>
+				<!-- <li>老列 <a href="#">删除</a></li> -->
+			</ul>
+		</div>
+		<script>
+			var btn = document.querySelector(".buttom");
+			// console.log(btn)
+			// 获取用户输入的信息
+			var input = document.querySelector("textarea");
+
+			var uls = document.querySelector("ul");
+			// var del = document.querySelector("ul").querySelectorAll('li').querySelectorAll('a');
+			console.log(uls);
+			btn.onclick = function () {
+				if (!input.value == "") {
+					var lis = document.createElement("li");
+					// var as = document.createElement("a");
+					uls.insertBefore(lis, uls.children[0]);
+					// 将用户输入的信息添加在新增的li里面
+					// console.log(input.value)
+					uls.children[0].innerHTML = input.value;
+					lis.innerHTML = input.value + '<a href ="javascript:;">删除</a>';
+					// uls.children[0].appendChild(as);
+					// uls.children[0].children[0].innerHTML = "删除";
+					input.value = "";
+				} else {
+					alert("发布的内容不能为空");
+				}
+				var del = document.querySelectorAll('a');
+				console.log(del)
+				// 父元素.removeChild(uls.children[0] 子元素);
+				for (i = 0; i < uls.children.length; i++) {
+					del[i].onclick = function () {
+						uls.removeChild(this.parentNode);
+					};
+				}
+				// uls.removeChild(uls.children[0]);
+				// console.log(111)
+			};
+		</script>
+	</body>
+</html>

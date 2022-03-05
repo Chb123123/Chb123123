@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			a {
+				text-decoration: none;
+			}
+			.score {
+				/* border: 1px solid red; */
+				width: 600px;
+				margin: 100px auto;
+				/* 将单元格边距改为 0  */
+				border-collapse: collapse;
+			}
+			thead th {
+				background-color: #cacdca;
+				border: 1px solid #999;
+				height: 35px;
+			}
+			tbody tr {
+				/* border: 1px solid red; */
+				height: 25px;
+			}
+			tbody th {
+				border: 1px solid #999;
+				height: 25px;
+			}
+		</style>
+	</head>
+	<body>
+		<table class="score">
+			<thead>
+				<tr>
+					<th>姓名</th>
+					<th>科目</th>
+					<th>成绩</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- <tr>
+					<th>蔡淮滨</th>
+					<th>Javascript</th>
+					<th>99</th>
+					<th><a href="javascript:;">删除</a></th>
+				</tr>
+				<tr>
+					<th>蔡淮滨</th>
+					<th>Javascript</th>
+					<th>99</th>
+					<th><a href="javascript:;">删除</a></th>
+				</tr>
+				<tr>
+					<th>蔡淮滨</th>
+					<th>Javascript</th>
+					<th>99</th>
+					<th><a href="javascript:;">删除</a></th>
+				</tr> -->
+			</tbody>
+		</table>
+		<script>
+			var datas = [
+				{
+					name: "老赵",
+					subject: "javascript",
+					score: 100,
+				},
+				{
+					name: "老铁",
+					subject: "javascript",
+					score: 100,
+				},
+				{
+					name: "老王",
+					subject: "javascript",
+					score: 100,
+				},
+				{
+					name: "老弟",
+					subject: "javascript",
+					score: 100,
+				},
+				{
+					name: "老妹",
+					subject: "javascript",
+					score: 100,
+				},
+				{
+					name: "老蔡",
+					subject: "javascript",
+					score: 1000,
+				},
+			];
+			// console.log(datas[0].name)
+			var list = ["name", "subject", "score", "s"];
+			var tbody = document.querySelector("tbody");
+			for (i = 0; i < datas.length; i++) {
+				var trs = document.createElement("tr");
+				tbody.appendChild(trs);
+				for (k in datas[i]) {
+					var ths = document.createElement("th");
+					trs.appendChild(ths);
+					// 将数组当中的对象值添加在新建的单元格里面
+					ths.innerHTML = datas[i][k];
+					// tbody.children[i].children[j].innerHTML = datas[j].k;
+				}
+				// 新建删除的单元格
+				var ths = document.createElement("th");
+				trs.appendChild(ths);
+				// 将新建的单元格里面添加删除链接
+				ths.innerHTML = '<a href="javascript:;">删除</a>';
+			}
+			// 点击删除 将整行单元格删除
+			var as = document.querySelectorAll("a");
+			// console.log(as)
+			for (var i = 0; i < as.length; i++) {
+				as[i].onclick = function () {
+					// 删除单元格 语法 要删除的父盒子.removeChild(要删除的元素)
+					tbody.removeChild(this.parentNode.parentNode);
+				};
+			}
+		</script>
+	</body>
+</html>
