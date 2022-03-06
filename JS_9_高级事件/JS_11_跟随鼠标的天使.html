@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+            body{
+                background-color: rgb(0,0,0);
+                position: relative;
+            }
+			img {
+				position: absolute;
+                transform: translate(-54%,-65%);
+				width: 200px;
+				height: 150px;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="images/173903cp7rdr3u7bdgtbkw.gif" alt="" />
+		<script>
+			// 获取图片元素
+			var love = document.querySelector("img");
+			document.addEventListener("mousemove", function (event) {
+				love.style.left = event.pageX+'px';
+				love.style.top = event.pageY+'px';
+                // console.log(event.pageX)
+			});
+		</script>
+	</body>
+</html>

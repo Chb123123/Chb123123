@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			.contiaer {
+				position: relative;
+				width: 200px;
+				margin: 200px auto;
+				/* border: 1px solid red; */
+				box-sizing: border-box;
+			}
+			.amp {
+				display: none;
+				position: absolute;
+				top: -44px;
+				border: 1px solid #ccc;
+				height: 30px;
+				width: 200px;
+				box-sizing: border-box;
+                border-radius: 10px;
+				margin-bottom: 20px;
+                line-height: 30px;
+                /* background-color: #ccc; */
+                font-size: 18px;
+                box-shadow: 0 0 4px rgba(0,0,0,.5);
+                overflow: hidden;
+			}
+			.amp::after {
+				content: "";
+				position: absolute;
+				bottom: -10px;
+				left: 44%;
+				transform: translateX(-50%);
+				/* border: 1px solid #ccc; */
+                transform: rotateZ(45deg);
+				border-top: 0;
+                border-left: 0;
+                border-top: 10px solid transparent;
+                border-left: 10px solid transparent;
+                border-bottom: 10px solid white;
+                border-right: 10px solid white;
+				border-radius: 0 0 20px 20px;
+				
+                /* box-shadow: 0 0 4px rgba(0,0,0,.5); */
+                /* background-color: white; */
+                /* z-index: 0; */
+			}
+			input[type="text"] {
+				width: 200px;
+				height: 20px;
+				box-sizing: border-box;
+				outline: none;
+                border: 1px solid blue
+			}
+		</style>
+	</head>
+	<body>
+		<div class="contiaer">
+			<div class="amp"></div>
+			<input type="text" name="" id="" placeholder="查询快递单号" />
+		</div>
+		<script>
+			var amp = document.querySelector(".amp");
+			var input = document.querySelector("input[type=text]");
+			// console.log(input)
+			document.addEventListener("keyup", function (event) {
+				if (event.keyCode === 65) {
+					input.focus();
+				}
+			});
+			input.addEventListener("keyup", function (evant) {
+				if (input.value.length > 0) {
+					amp.style.display = 'block'
+					// console.log(111);
+                    amp.innerHTML = input.value
+				}else{
+                    amp.style.display = 'none'
+                }
+			});
+            input.onfocus = function(){
+                if(this.value !== ''){
+                    amp.style.display = 'block'
+                // amp.innerHTML = input.value
+                }
+            }
+            input.onblur = function(){
+                amp.style.display = 'none'
+                
+            }
+		</script>
+	</body>
+</html>

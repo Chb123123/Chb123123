@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			div {
+				margin: 100px auto;
+				position: relative;
+				width: 400px;
+				height: 30px;
+				/* border: 1px solid red; */
+				text-align: center;
+			}
+			input[type="search"] {
+				/* display: block;            */
+				/* position: absolute; */
+				width: 400px;
+				height: 28px;
+				border: 1px solid blue;
+				border-right: 0;
+				outline: none;
+				padding-left: 10px;
+			}
+			input[type="submit"] {
+				position: absolute;
+				top: -1px;
+				right: -59px;
+				height: 30px;
+				width: 60px;
+				background-color: blue;
+				border: 1px solid #ccc;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<form action="">
+				<input type="submit" value="搜索" />
+				<input type="search" name="" id="" placeholder="美的电饭煲" />
+			</form>
+		</div>
+		<script>
+			var input = document.querySelector("input[type=search]");
+			// console.log(input)
+			document.addEventListener("keyup", function (event) {
+				// console.log(event.keyCode)
+				if (event.keyCode === 83) {
+					input.focus();
+				}
+			});
+		</script>
+	</body>
+</html>
