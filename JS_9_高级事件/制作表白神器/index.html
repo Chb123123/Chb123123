@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>乡村爱情故事</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.container {
+				position: relative;
+				width: 850px;
+				height: 570px;
+				background: url(image/R-C.jpg) no-repeat;
+				background-size: 100% 100%;
+				margin: 100px auto;
+				border-radius: 10px;
+			}
+			/* .container::after{
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 20px;
+                height: 20px;
+                background-color: red;
+                border-radius: 4px;
+            }
+            .container::after:hover{
+                background-color: #00BFFF;
+            } */
+			.container p {
+				/* display: none; */
+				position: absolute;
+				/* border: 1px solid red; */
+				height: 230px;
+				width: 400px;
+				font-size: 70px;
+				color: white;
+				top: 161px;
+				left: 216px;
+				text-align: center;
+			}
+			/* 同意按钮 */
+			button:nth-child(1) {
+				position: absolute;
+				left: 178px;
+				bottom: 130px;
+				border: 0;
+				background-color: rgb(9, 217, 223);
+				color: white;
+				width: 80px;
+				height: 35px;
+				box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+				border-radius: 10px;
+				transition: all 1s;
+			}
+			button:nth-child(1):hover {
+				background-color: red;
+				color: white;
+			}
+			/* 拒绝按钮 */
+			button:nth-child(2) {
+				position: absolute;
+				right: 185px;
+				bottom: 130px;
+				width: 80px;
+				height: 35px;
+				background-color: rgb(1, 124, 158);
+				border: 0;
+				color: white;
+				box-shadow: 0 0 10px rgba(100, 100, 100, 0.5);
+				border-radius: 10px;
+				z-index: 999;
+			}
+			.good {
+				display: none;
+				position: absolute;
+				top: 200px;
+				left: 322px;
+				width: 300px;
+				/* height: 161px; */
+				line-height: 1.8;
+				text-align: center;
+				/* border: 1px solid red; */
+				background-color: rgb(240, 240, 238);
+				font-size: 25px;
+				color: #00bfff;
+				transform: rotateZ(8deg);
+				box-shadow: 0 0 10px;
+				border-radius: 20px;
+			}
+			img {
+				position: absolute;
+				transform: translate(-50%, -105%);
+				width: 60px;
+				height: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<button class="agiee">我同意</button>
+			<button class="regect">我拒绝</button>
+			<p>我们<br />在一起吧</p>
+			<div class="good">现在开始你就是我的人啦</div>
+		</div>
+		<img src="image/1.png" alt="" />
+		<script>
+			// 创建随机数
+			function geyRandom(min, max) {
+				return Math.floor(Math.random() * (max - min + 1) + min);
+			}
+			// fbbc-itvqcca7238078.png
+			var container = document.querySelector(".container");
+			var agiee = document.querySelector(".agiee");
+			var regect = document.querySelector(".regect");
+
+			regect.addEventListener("mouseover", function (event) {
+				this.style.top = geyRandom(0, 300) + "px";
+				this.style.left = geyRandom(0, 600) + "px";
+			});
+			regect.addEventListener("click", function () {
+				this.innerHTML = "拒绝无效";
+			});
+			regect.addEventListener("mouseout", function () {
+				this.innerHTML = "追我啊";
+			});
+			agiee.addEventListener("click", function () {
+				agiee.parentNode.style.background =
+					"url(image/fbbc-itvqcca7238078.png) no-repeat center";
+				agiee.parentNode.style.backgroundSize = "100% 100%";
+				agiee.style.display = "none";
+				regect.style.display = "none";
+				container.children[2].style.display = "none";
+				container.children[3].style.display = "block";
+			});
+			var love = document.querySelector("img");
+			document.addEventListener("mousemove", function (event) {
+				love.style.left = event.pageX + "px";
+				love.style.top = event.pageY + "px";
+			});
+		</script>
+	</body>
+</html>
