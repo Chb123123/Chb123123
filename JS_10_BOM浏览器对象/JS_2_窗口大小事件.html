@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			div {
+				width: 200px;
+				height: 200px;
+				margin: 100px auto;
+				background-color: aqua;
+			}
+		</style>
+	</head>
+	<body>
+        <div></div>
+		<script>
+			// window.onresize = function(){} 页面大小发生变化的时候触发
+			// window.addEventListener('resize',function(){})
+			// 通常用来完成响应式布局 只要窗口发生了变化，就会触发这个事件
+			// window.innerWhite 获取当前屏幕尺寸
+			// window.addEventListener("resize", function () {
+			// 	console.log(window.innerWidth);
+			// });
+			// 当屏幕小于800px 把div隐藏
+			var div = document.querySelector("div");
+			window.addEventListener("resize", function () {
+				if (window.innerWidth <= 800) {
+					div.style.display = "none";
+				}else{
+                    div.style.display = 'block'
+                }
+			});
+		</script>
+		
+	</body>
+</html>

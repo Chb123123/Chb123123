@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			div {
+                position: relative;
+				width: 200px;
+				height: 200px;
+				background-color: aqua;
+                font-size: 40px;
+                color: white;
+                line-height: 200px;
+                text-align: center;
+			}
+            div::after{
+                content: '5秒后自动关闭';
+                position: absolute;
+                top: 0;
+                right: 0;
+                background-color: red;
+                color: white;
+                font-size: 12px;
+                line-height: 1;
+            }
+		</style>
+	</head>
+	<body>
+		<script>
+			// 五秒自动关闭广告
+			document.addEventListener("DOMContentLoaded", function () {
+				var div = document.querySelector("div");
+                console.log(div)
+				function callback() {
+					div.style.display = "none";
+				}
+				setTimeout(callback, 5000);
+			});
+		</script>
+		<div>广告</div>
+	</body>
+</html>

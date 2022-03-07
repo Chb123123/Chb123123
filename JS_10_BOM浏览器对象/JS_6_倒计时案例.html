@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			li {
+				list-style: none;
+			}
+			.countdown {
+				position: relative;
+				margin: 100px auto;
+				width: 200px;
+				height: 400px;
+				background-color: red;
+				color: white;
+				font-size: 40px;
+				text-align: center;
+				/* line-height: 30px; */
+				padding: 170px 0 0 0;
+				box-sizing: border-box;
+			}
+			.countdown span {
+				position: absolute;
+				width: 150px;
+				height: 30px;
+				line-height: 30px;
+				bottom: 80px;
+				left: 50%;
+				transform: translateX(-50%);
+				background-color: brown;
+				font-size: 18px;
+			}
+			.countdown ul {
+				display: flex;
+				position: absolute;
+				bottom: 40px;
+				left: 50%;
+				transform: translateX(-50%);
+				background-color: white;
+				width: 150px;
+				line-height: 1;
+			}
+			.countdown ul li {
+				flex: 1;
+                height: 35px;
+                line-height: 35px;
+				/* margin: 0 10px; */
+				/* float: left; */
+				background-color: black;
+				font-size: 24px;
+				box-sizing: border-box;
+				border: 1px solid white;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="countdown">
+			京东秒杀
+			<span>距离明天开始还有</span>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<script>
+			// setInteral(function(),间隔时间// 毫秒)
+			// setInterval() 每间隔一段时间就去调用一次函数
+			// setInterval(function(){
+			//     alert('你好')
+			// },1000)
+			// var time = '2022-3-8 0:0:0'
+			var ul = document.querySelector("ul");
+            // 用户输入时间
+            var times1 = +new Date('2022-3-8 0:0:0')
+            times() // 先调用一次函数 防止页面刷新有空白情况
+            // console.log(times)
+			setInterval(times, 500);
+				// console.log(ul.children[1])
+				function times() {
+					var times2 = +new Date();
+                    // 将用户输入的时间转为时间戳 在减去当前的时间戳
+					var lave1 = times1 - times2;
+                    // 将减去的时间戳转为秒数
+					var lave = Math.floor(lave1 / 1000);
+					// console.log(lave);
+					var h = Math.floor((lave / 60 / 60) % 24);
+					h = h < 10 ? "0" + h : h;
+					var m = Math.floor((lave / 60) % 60);
+					m = m < 10 ? "0" + m : m;
+					var s = Math.floor(lave % 60);
+					s = s < 10 ? "0" + s : s;
+					// 将时间输入到框内
+					ul.children[0].innerHTML = h;
+					ul.children[1].innerHTML = m;
+					ul.children[2].innerHTML = s;
+					// console.log(m)
+				}
+				// 调用函数 输入倒计时的时间
+				
+			
+			// 获取当前倒计时的时间
+		</script>
+	</body>
+</html>
