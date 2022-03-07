@@ -127,7 +127,19 @@
 				this.innerHTML = "拒绝无效";
 			});
 			regect.addEventListener("mouseout", function () {
+				var color = [
+					"red",
+					"blue",
+					"pink",
+					"green",
+					"DeepPink",
+					"LightGreen",
+					"DeepPink4",
+					"DarkRed",
+					"OliveDrab1",
+				];
 				this.innerHTML = "追我啊";
+				this.style.backgroundColor = color[geyRandom(0, color.length - 1)];
 			});
 			agiee.addEventListener("click", function () {
 				agiee.parentNode.style.background =
