@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // (1)在全局作用域下 或普通函数中 this 指向的是 window
+        console.log(this)
+        function fn(){
+            console.log(this)
+        }
+        fn()
+        // 在计数器下 this 指向也是widow 
+        // setInterval(function(){
+        //     console.log(this)
+        // },1000)
+        // (2) 方法中 this 谁调用就指向谁
+        var arr = {
+            sayhi: function(){
+                console.log(this)
+            }
+        }
+        console.log(arr.sayhi())
+    </script>
+</body>
+</html>

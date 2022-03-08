@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            margin: 100px;
+        }
+        div span{
+            color: red;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>首页</h2>
+    <div><span></span>欢迎光临</div>
+    <script>
+        console.log(location.search)
+        // 传递过来的参数 先去掉 ？ 可以用 substr(起始的位置，截取的数量)
+        var params = location.search.substr(1)
+        console.log(params)
+        // 利用等号分割键和值 split('=') 
+        var arr = params.split('=')
+        var div = document.querySelector('div')
+        div.children[0].innerHTML = arr[1]
+    </script>
+</body>
+</html>

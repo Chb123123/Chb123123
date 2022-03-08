@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 同步执行 JS 在上一个指令执行完成才会执行下一条指令
+        // 异步执行 不会等上一条指令执行完在执行下一条指令 
+        console.log(1)
+        // setInterval(function(){
+        //     console.log(3)
+        // },1000)
+        setTimeout(function(){
+            console.log(3)
+        },1000)
+        console.log(2)
+    </script>
+</body>
+</html>
