@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				background-color: #ccc;
+			}
+			a {
+				text-decoration: none;
+				color: #999;
+			}
+			.title {
+				/* position: relative; */
+				text-align: center;
+				cursor: pointer;
+				/* border: 1px solid red; */
+				height: 40px;
+				line-height: 40px;
+				background-color: aqua;
+				margin: 20px auto;
+				width: 600px;
+				border-radius: 10px;
+				box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+			}
+
+			/* 登入框模块 */
+			.login {
+				display: none;
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 450px;
+				height: 300px;
+				border-radius: 15px;
+				background-color: white;
+				box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+				/* text-align: center; */
+			}
+			.memder {
+				/* position: relative; */
+				/* border: 1px solid red; */
+				text-align: center;
+				height: 40px;
+				line-height: 40px;
+				font-weight: 400;
+				/* 鼠标经过，变为移动样式 */
+				cursor: move;
+			}
+			.memder span {
+				display: block;
+				position: absolute;
+				top: -10px;
+				right: -10px;
+				/* border: 1px solid red; */
+				background-color: white;
+				box-shadow: 0 0 5px;
+				border-radius: 50%;
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+				font-size: 12px;
+			}
+			.username {
+				margin: 40px 0 20px;
+				/* border: 1px solid red; */
+				height: 35px;
+				line-height: 35px;
+				font-size: 14px;
+				text-align: right;
+				padding-right: 50px;
+			}
+			.username input {
+				margin-left: 10px;
+				border: 1px solid #ccc;
+				height: 30px;
+				width: 300px;
+				font-size: 16px;
+				outline: none;
+			}
+			.password {
+				/* border: 1px solid red; */
+				height: 35px;
+				line-height: 35px;
+				text-align: right;
+				padding-right: 50px;
+				font-size: 14px;
+			}
+			.password input {
+				margin-left: 10px;
+				height: 30px;
+				width: 300px;
+				font-size: 16px;
+				outline: none;
+				border: 1px solid #ccc;
+			}
+			.login_btn {
+				/* background-color: red; */
+				margin: 35px auto;
+				/* border: 1px solid red; */
+				text-align: center;
+				cursor: pointer;
+				height: 36px;
+				line-height: 36px;
+				width: 200px;
+				color: white;
+				background-color: blue;
+				border-radius: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2 class="title">点击,弹出登入框</h2>
+		<div class="login">
+			<h3 class="memder">
+				登录会员
+				<span><a href="javascript:;">关闭</a></span>
+			</h3>
+			<div class="username">
+				用户名:<input type="text" name="" id="" placeholder="输入用户名" />
+			</div>
+			<div class="password">
+				登入密码:<input
+					type="password"
+					name=""
+					id=""
+					placeholder="输入登入密码"
+				/>
+			</div>
+			<div class="login_btn">登入账号</div>
+		</div>
+		<script>
+			// 将页面内的文字不能选中
+			document.addEventListener("contextmenu", function (event) {
+				event.prevenDefault();
+			});
+			document.addEventListener("selectstart", function (event) {
+				event.preventDefault();
+			});
+			var login = document.querySelector(".login");
+			var btn = document.querySelector(".title");
+			btn.addEventListener("click", function () {
+				login.style.display = "block";
+				// btn.style.display = "none";
+				// body.style.backgroundColor = 'red'
+			});
+
+			// 获取移动的坐标
+			var move = document.querySelector(".memder");
+			console.log(move);
+			move.addEventListener("mousedown", function (event) {
+				var x = event.pageX - login.offsetLeft; //鼠标在盒子内X轴的坐标
+				var y = event.pageY - login.offsetTop; // 鼠标在盒子内Y轴的坐标
+				// console.log(x,y)
+                // 鼠标移动，用鼠标在页面的坐标减去鼠标在盒子内的坐标 在将减去的坐标给登录页面
+				document.addEventListener("mousemove", move);
+				function move(event) {
+					login.style.left = event.pageX - x + "px";
+					login.style.top = event.pageY - y + "px";
+				}
+                // 鼠标弹起，移动事件移除
+				document.addEventListener("mouseup", function () {
+					document.removeEventListener("mousemove", move);
+				});
+			});
+			// move.addEventListener("mousemove", function (event) {
+			// 	var x = event.pageX - move.offsetLeft;
+			// 	var y = event.pageY - move.offsetTop;
+			// 	console.log(x, y);
+			// });
+			// 点击关闭隐藏登录框
+			move.children[0].children[0].addEventListener("click", function () {
+				login.style.display = "none";
+			});
+		</script>
+	</body>
+</html>

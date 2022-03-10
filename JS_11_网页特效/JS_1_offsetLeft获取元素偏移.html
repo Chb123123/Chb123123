@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            margin: 100px auto;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son">
+
+        </div>
+    </div>
+    <script>
+        // 父盒子要有定位，否则返回的是 body 最大的好处是 可以动态的获取元素的信息 
+        var father = document.querySelector('.father')
+        console.log(father.offsetTop)
+        var son = document.querySelector('.son')
+        console.log(son.offsetLeft)  // 获取元素距离父盒子的左边距
+        console.log(son.offsetTop)   // 获取元素距离父盒子的高度
+        console.log(son.offsetWidth)   // 获取元素的宽度
+        console.log(son.offsetHeight)  // 获取元素的高
+        // 返回父节点
+        console.log(son.parentNode)
+    </script>
+</body>
+</html>
