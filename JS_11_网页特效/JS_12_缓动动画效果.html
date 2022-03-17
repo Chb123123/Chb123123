@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			div {
+				position: absolute;
+				top: 100px;
+				width: 100px;
+				height: 100px;
+				background-color: aqua;
+			}
+		</style>
+	</head>
+	<body>
+		<button class="btn500">点击开始到五百</button>
+		<button class="btn800">点击开始到八百</button>
+		<div>你好啊</div>
+		<script>
+			var btn500 = document.querySelector(".btn500");
+			var box = document.querySelector("div");
+			btn500.addEventListener("click", function () {
+				clearInterval(move);
+				var move = setInterval(function () {
+					var step = (500 - box.offsetLeft) / 10;
+					step = step > 0 ? Math.ceil(step) : Math.floor(step);
+					console.log(step);
+					if (box.offsetLeft == 500) {
+						clearInterval(move);
+					}
+					box.style.left = box.offsetLeft + step + "px";
+					console.log(box.style.left);
+				}, 15);
+			});
+			var btn800 = document.querySelector(".btn800");
+			btn800.addEventListener("click", function () {
+				clearInterval(move);
+				var move = setInterval(function () {
+					var step = (800 - box.offsetLeft) / 10;
+					step = step > 0 ? Math.ceil(step) : Math.floor(step);
+					box.style.left = box.offsetLeft + step + "px";
+					console.log(box.style.left);
+					if (box.offsetLeft == 800) {
+						clearInterval(move);
+						function fn() {
+							console.log(11);
+						}
+						fn();
+					}
+					
+				}, 15);
+
+				
+			});
+		</script>
+	</body>
+</html>

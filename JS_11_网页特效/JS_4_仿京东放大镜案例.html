@@ -14,24 +14,33 @@
 				position: relative;
 				height: 300px;
 				width: 200px;
-				background-color: aqua;
+				background-color: #ccc;
 				margin: 50px 0 0 50px;
-				border: 1px solid red;
+				/* border: 1px solid red; */
 				/* line-height: 300px; */
 				cursor: move;
 			}
 			.dig_box {
-				display: none;
+				/* display: none; */
 				position: absolute;
 				top: 0;
 				left: 300px;
 				height: 400px;
 				width: 300px;
-				background-color: red;
+				/* background-color: red; */
+				overflow: hidden;
+				/* text-align: left; */
 			}
 			.box .dig_box img {
-				width: 100%;
-				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				/* transform: translate(50%,50%); */
+				/* display: block; */
+				width: 600px;
+				height: 800px;
+				float: left;
+				/* border: 1px solid red; */
 			}
 			.box img {
 				display: block;
@@ -50,7 +59,7 @@
 				transform: translate(-50%, -50%); */
 				width: 100px;
 				height: 100px;
-				background-color: rgba(0, 0, 0, 0.5);
+				background-color: rgba(0, 0, 0, 0.4);
 			}
 		</style>
 	</head>
@@ -59,7 +68,7 @@
 			<img src="image/R-C7.jpg" alt="" />
 			<div class="mask"></div>
 			<div class="dig_box">
-				<img src="image/R-C7.jpg" alt="" />
+				<img src="image/R-C1.jpg" alt="" class="digImg" />
 			</div>
 		</div>
 		<script>
@@ -71,10 +80,42 @@
 				var x = e.pageX - box.offsetLeft;
 				var y = e.pageY - box.offsetTop;
 				// console.log(x, y);
-				mask.style.left = x - mask.offsetWidth / 2 + "px";
-				mask.style.top = y - mask.offsetHeight / 2 + "px";
+				var maskX = x - 50;
+				var maskY = y - 50;
+				// 如果 maskX 的坐标小于0 就让它停在0的位置
+				// 遮挡层的最大移动距离
+				var maskMax = box.offsetWidth - mask.offsetWidth;
+				var maskMax1 = box.offsetHeight - mask.offsetHeight;
+				if (maskX <= 0) {
+					maskX = 0;
+				} else if (maskX >= maskMax) {
+					// console.log(box.offsetWidth)
+					maskX = maskMax;
+				}
+				// 如果maskY的坐标小于0 则 就让他停在0的位置上面
+				if (maskY <= 0) {
+					maskY = 0;
+				} else if (maskY >= maskMax1) {
+					maskY = maskMax1;
+					// console.log(maskY)
+				}
+				mask.style.left = maskX + "px";
+				mask.style.top = maskY + "px";
 				big.style.display = "block";
 				mask.style.display = "block";
+				// 获取大的图片的节点
+				var bigImg = document.querySelector(".digImg");
+				// console.log(bigImg)
+				// 大图片最大的移动距离
+				var bigMax = bigImg.offsetWidth - big.offsetWidth;
+				var bigMax1 = bigImg.offsetHeight - big.offsetHeight;
+				// 大图片的移动距离的 X 轴
+				var bigX = (maskX * bigMax) / maskMax;
+				// 大图片移动距离的 Y 轴
+				var bigY = (maskY * bigMax1) / maskMax1;
+				console.log(bigX, bigY);
+				bigImg.style.left = bigX + "px";
+				bigImg.style.top = bigY + "px";
 			}
 			box.addEventListener("mouseout", function () {
 				big.style.display = "none";

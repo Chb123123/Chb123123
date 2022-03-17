@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            margin: 100px auto;
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            background-color: aqua;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好
+    </div>
+    <script>
+        var box = document.querySelector('div')
+        console.log(box.clientHeight)
+        console.log(box.scrollHeight)
+        // 滚动条事件 只要触发了就会执行函数
+        box.addEventListener('scroll',function(){
+            console.log(box.scrollTop)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+        p{
+            position: absolute;
+            top: 100px;
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button>点我</button>
+    <div>
+
+    </div>
+    <p>傻逼</p>
+    <script>
+        // 封装动画函数需要传递两个参数 动画对象 和 移动距离
+        function animtion(ojb,location){
+            clearInterval(ojb.move)
+            ojb.move = setInterval(function () {
+				ojb.style.left = ojb.offsetLeft + 1 + "px";
+				// X += 1;
+				if (ojb.offsetLeft == location) {
+					clearInterval(ojb.move);
+				}
+			}, 10);
+        }
+        // 使用函数
+        // var X = 0;
+        var div = document.querySelector('div')
+        animtion(div,1000)
+        var p = document.querySelector('p')
+        // animtion(p,800)
+        var btn = document.querySelector('button')
+        var flay = 0;
+        btn.addEventListener('click',function(){
+            animtion(p,800)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			a {
+				text-decoration: none;
+				color: #666;
+			}
+			.nav {
+				position: relative;
+				margin: 100px auto;
+				/* background-color: #666; */
+				width: 660px;
+			}
+			.cloud {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 83px;
+				height: 30px;
+				background-color: rgba(0, 0, 0, 0.4);
+                /* z-index: 3; */
+			}
+			.container {
+                position: absolute;
+				height: 30px;
+				width: 660px;
+				border: 1px solid red;
+				box-sizing: border-box;
+				/* overflow: hidden; */
+			}
+			.container li {
+				float: left;
+				list-style: none;
+                width: 82.2px;
+				padding:0 7px;
+				line-height: 30px;
+				z-index: 2;
+				/* background-color: red; */
+                text-align: center;
+                box-sizing: border-box;
+			}
+			.container li:nth-child(1) {
+				margin-left: 0;
+			}
+			.style {
+				color: green;
+			}
+		</style>
+		<script src="animate.js"></script>
+	</head>
+	<body>
+		<div class="nav">
+			<span class="cloud"></span>
+			<ul class="container">
+				<li><a href="javascript:;" class="style">首页新闻</a></li>
+				<li><a href="javascript:;">师资力量</a></li>
+				<li><a href="javascript:;">活动策划</a></li>
+				<li><a href="javascript:;">企业文化</a></li>
+				<li><a href="javascript:;">招聘信息</a></li>
+				<li><a href="javascript:;">公司简介</a></li>
+				<li><a href="javascript:;">你是傻逼</a></li>
+				<li><a href="javascript:;">你是垃圾</a></li>
+			</ul>
+		</div>
+		<script>
+			var container = document.querySelector(".container");
+			var span = document.querySelector(".cloud");
+            // current 作为 span 的起始位置
+            var current = 0;
+			for (var i = 0; i < container.children.length; i++) {
+				container.children[i].addEventListener("mouseenter", function () {
+					animtion(span, this.offsetLeft);
+				});
+				container.children[i].addEventListener("mouseleave", function () {
+					animtion(span, current);
+				});
+				container.children[i].children[0].addEventListener(
+					"click",
+					function () {
+						for (var j = 0; j < container.children.length; j++) {
+							container.children[j].children[0].className = "";
+						}
+						this.className = "style";
+                        current = this.offsetLeft
+					}
+				);
+			}
+			// 鼠标经过li span盒子就到经过的 li 上面
+			container;
+		</script>
+	</body>
+</html>

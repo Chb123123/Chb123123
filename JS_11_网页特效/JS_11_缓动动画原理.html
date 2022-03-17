@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .love{
+            position: relative;
+            transform: rotateZ(-45deg); 
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 300px auto;
+            /* border: 1px solid red; */
+        }
+        .love span{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            /* border: 1px solid red; */
+            background-color: red;
+        }
+        .love span:nth-child(1){
+            top:-100px;
+            left: 0;
+            background-color: red;
+        }
+        .love span:nth-child(2){
+            top: 0;
+            right: -100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="love">
+        <span></span>
+        <span></span>
+    </div>
+    <script>
+        // 缓动动画的原理
+        // 运动速度有变化，最常见的是让速度由快到慢
+        // 缓动画公式 (目标值 - 现在的位置) / 10
+
+    </script>
+</body>
+</html>

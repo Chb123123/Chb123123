@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .silderbar{
+            position: relative;
+            margin: 100px auto;
+            background-color: aqua;
+            width: 100px;
+            height: 50px;
+            border: 1px solid red;
+            /* overflow: hidden; */
+        }
+        .silderbar span{
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            font-size: 30px;
+            background-color: red;
+            line-height: 50px;
+            z-index: 999;
+            color: white;
+        }
+        .silderbar div{
+            /* display: none; */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 50px;
+            background-color: black;
+            color: white;
+            line-height: 50px;
+            /* background-color: aliceblue; */
+
+        }
+    </style>
+    <script src="animate.js"></script>
+</head>
+<body>
+    <div class="silderbar">
+        <span>←</span>
+        <div class="question">问题反馈</div>
+    </div>
+    <script>
+        var silderbar = document.querySelector('.silderbar')
+        var span = document.querySelector('span')
+        var question = document.querySelector('.question')
+        silderbar.addEventListener('mouseenter',function(){
+            // question.style.display = 'block'
+            
+            animtion(question,-160,function(){
+                span.innerHTML = '←'
+            })
+        })
+        silderbar.addEventListener('mouseout',function(){
+            // question.style.display = 'block'
+            animtion(question,0,function(){
+                span.innerHTML = '→'
+                question.style.backgroundColor = 'aqua'
+                // question.style.color = 'black'
+            })
+            
+        })
+    </script>
+</body>
+</html>

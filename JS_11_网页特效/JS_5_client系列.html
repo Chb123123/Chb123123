@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: aqua;
+            border: 10px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        var box = document.querySelector('div')
+        // 返回元素的宽度 但不包括边框
+        console.log(box.clientWidth)
+        // 返回元素的高度， 不包含边框
+        console.log(box.clientHeight)
+        // 返回元素的上边框 
+        console.log(box.clientTop)
+        // 返回元素的 左边框
+        console.log(box.clientLeft)
+    </script>
+</body>
+</html>
