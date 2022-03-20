@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.container {
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				background-color: aqua;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container"></div>
+		<script>
+			var div = document.querySelector(".container");
+			var startX = 0; // 获取手指的初始坐标
+			var startY = 0;
+			var X = 0; // 获取盒子原来的位置
+			var Y = 0;
+			// 给盒子绑定事件
+			div.addEventListener("touchstart", function (event) {
+				// 获取手指触摸的坐标
+				startX = event.targetTouches[0].pageX;
+				startY = event.targetTouches[0].pageY;
+				// 获取盒子的初始坐标
+				X = div.offsetLeft;
+				Y = div.offsetTop;
+			});
+			div.addEventListener("touchmove", function (event) {
+				// 计算手指的移动距离: 手指移动之后的坐标减去手指的初始坐标
+				var moveX = event.targetTouches[0].pageX - startX;
+				var moveY = event.targetTouches[0].pageY - startY;
+				div.style.left = X + moveX + "px";
+				div.style.top = Y + moveY + "px";
+				if (div.offsetLeft == 0) {
+					div.style.left = 0;
+				} else if (div.offsetTop == 0) {
+					div.style.top = 0;
+				}
+
+				// console.log(moveX)
+				event.preventDefault();
+				//     div.addEventListener('touchend',function(){
+				//     div.style.left = moveX + 'px'
+				//     div.style.top = moveY + 'px'
+				// })
+			});
+		</script>
+	</body>
+</html>

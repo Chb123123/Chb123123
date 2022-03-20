@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .backgroundColor {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="one two"></div>
+    <button>切换背景颜色</button>
+    <script>
+        // classList 返回元素类名
+        var box = document.querySelector('.one')
+        // console.log(box.classList[1])
+        // classList add 添加类名
+        box.classList.add('three')
+        console.log(box.classList)
+        // classList remove 移除类名
+        box.classList.remove('one')
+        console.log(box.classList)
+        // classList toggle('类名') 切换类名 如果有这个类名 就删除这个类名 如果没有这个类名 就加上这个类名
+        box.classList.toggle('three')
+        console.log(box.classList)
+
+        // 利用切换类名 来设置背景样式  
+        var btn = document.querySelector('button')
+        btn.addEventListener('click',function(){
+            document.body.classList.toggle('backgroundColor')
+        })
+    </script>
+</body>
+</html>
