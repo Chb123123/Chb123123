@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="fastclick.js"></script>
+	</head>
+	<body>
+		<button>点击</button>
+		<script>
+			// 移动端点击事件会有 300ms 延迟 原因是移动端屏幕会判断你是否是双击还是单击 ，移动端双击屏幕会放大页面
+			// (1) 解决方法一： 禁止双击屏幕的缩放效果 并且去掉 300ms 的延迟
+			// 在头部添加 <meta name="viewport" content="user-scalable=no">
+			// (2) 封装函数 判断用户是否在 150ms 内再次点击 如果没有则当成点击事件
+			// (3) 使用插件 fastclick.js
+			if ("addEventListener" in document) {
+				document.addEventListener(
+					"DOMContentLoaded",
+					function () {
+						FastClick.attach(document.body);
+					},
+					false
+				);
+			}
+			var btn = document.querySelector("button");
+			btn.addEventListener("click", function () {
+				alert(111);
+			});
+		</script>
+	</body>
+</html>
