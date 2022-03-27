@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+        <script src="jQuery.js"></script>
+	</head>
+	<body>
+		<ul>
+			<li>兄弟1</li>
+			<li>兄弟2</li>
+			<li class="item">兄弟3</li>
+			<li>兄弟4</li>
+			<li>兄弟5</li>
+			<li>兄弟6</li>
+		</ul>
+        <ol>
+            <li>老铁1</li>
+            <li>老铁2</li>
+            <li>老铁3</li>
+            <li>老铁4</li>
+            <li>老铁5</li>
+            <li>老铁6</li>
+        </ol>
+        <div class="first"></div>
+		<script>
+			$(function () {
+				// (1)兄弟元素
+				$("ul .item").siblings("li").css("color", "red");
+				// (2) 第 n 个元素
+                $('ol li:eq(2)').css('color', 'blue')
+                $('ol li').eq(4).css('color', 'blue')
+				// (3) 判断是否有某个类名
+                console.log($('div:first').hasClass('first'))
+			});
+		</script>
+	</body>
+</html>

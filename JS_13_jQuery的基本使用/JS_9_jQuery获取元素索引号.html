@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.js"></script>
+</head>
+<body>
+    <ul>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+    </ul>
+    <ol>
+        <li>121</li>
+        <li>122</li>
+        <li>123</li>
+        <li>124</li>
+        <li>125</li>
+        <li>126</li>
+        <li>127</li>
+    </ol>
+    <script>
+        $(function() {
+            $('ul').children('li').click(function(){
+                var index = $(this).index()
+                $('ol').children('li').eq(index).show();
+                $('ol').children('li').eq(index).siblings().hide()
+            })
+        })
+    </script>
+</body>
+</html>

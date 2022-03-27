@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.js"></script>
+    <script>
+        // 动画函数 animate 的四个函数 位置 时间
+        $(function(){
+            $("button").click(function(){
+                $('div').animate({
+                    left: 500,
+                    top: 300,
+                },2000)
+            })
+        })
+    </script>
+    <style>
+        div{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <button>动起来,鲜花会为你开</button>
+    <div></div>
+</body>
+</html>

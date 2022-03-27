@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			li {
+				list-style: none;
+			}
+			ul {
+				/* border: 1px solid red; */
+				width: 1000px;
+				height: 40px;
+				background-color: #eee;
+				margin: 100px auto 0;
+			}
+			ul li {
+				cursor: pointer;
+				float: left;
+				height: 40px;
+				line-height: 40px;
+				padding: 0 20px;
+				transition: all 0.3s;
+			}
+			ul li:hover {
+				background-color: red;
+				color: white;
+			}
+			ol {
+				position: relative;
+				width: 1000px;
+				height: 300px;
+				margin: auto;
+				border: 1px solid #ccc;
+				box-sizing: border-box;
+			}
+			ol li {
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: none;
+				/* width: 1000px; */
+			}
+		</style>
+		<script src="jQuery.js"></script>
+		<script>
+			$(function () {
+				$("ul")
+					.children("li")
+					.mouseover(function () {
+						$(this)
+							.css({
+								backgroundColor: "red",
+								color: "white",
+							})
+							.siblings()
+							.css({
+								backgroundColor: "",
+								color: "",
+							});
+						var index = $(this).index();
+						$("ol").children("li").eq(index).show(100).siblings().hide();
+					});
+			});
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>商品介绍</li>
+			<li>规格与包装</li>
+			<li>售后保障</li>
+			<li>商品评价 (5000)</li>
+			<li>手机社区</li>
+		</ul>
+		<ol>
+			<li style="display: block">商品介绍栏模块</li>
+			<li>规格与包装模块</li>
+			<li>售后保障模块</li>
+			<li>商品介绍模块</li>
+			<li>手机社区模块</li>
+		</ol>
+	</body>
+</html>

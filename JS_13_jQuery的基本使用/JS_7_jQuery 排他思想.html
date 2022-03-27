@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+        <script src="jQuery.js"></script>
+	</head>
+	<body>
+		<button>按钮1</button><button>按钮2</button><button>按钮3</button
+		><button>按钮4</button><button>按钮5</button><button>按钮6</button>
+		<script>
+			$(function () {
+				$("button").click(function () {
+					$(this).css("background", "red");
+					$(this).siblings().css("background", "none");
+				});
+			});
+		</script>
+	</body>
+</html>

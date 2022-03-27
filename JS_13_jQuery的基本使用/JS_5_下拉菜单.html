@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="jQuery.js"></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			a {
+				text-decoration: none;
+				color: #777;
+			}
+			li {
+				list-style: none;
+			}
+			.container {
+				height: 40px;
+				border: 1px solid red;
+				line-height: 40px;
+				width: 400px;
+				margin: 100px auto;
+			}
+			.container > li {
+				float: left;
+			}
+			.container li > a {
+				display: inline-block;
+				width: 100px;
+				text-align: center;
+				background-color: aqua;
+				transition: all 0.4s;
+			}
+			.container li > a:hover {
+				background-color: blue;
+				color: white;
+			}
+			.container li > ul {
+				width: 100px;
+				text-align: center;
+				display: none;
+			}
+			.container li > ul li {
+				cursor: pointer;
+				border: 1px solid #ccc;
+				transition: all 0.3s;
+			}
+			.container li > ul li:hover {
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="container">
+			<li>
+				<a href="javascript:;">微博</a>
+				<ul class="">
+					<li>私信</li>
+					<li>私信</li>
+					<li>私信</li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:;">微博</a>
+				<ul class="">
+					<li>私信</li>
+					<li>私信</li>
+					<li>私信</li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:;">微博</a>
+				<ul class="">
+					<li>私信</li>
+					<li>私信</li>
+					<li>私信</li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:;">微博</a>
+				<ul class="">
+					<li>私信</li>
+					<li>私信</li>
+					<li>私信</li>
+				</ul>
+			</li>
+		</ul>
+		<script>
+			$(function () {
+				$(".container").children('li').mouseover(function(){
+                    $(this).children('ul').css('display', 'block')
+                })
+                $(".container").children('li').mouseout(function(){
+                    $(this).children('ul').css('display', 'none')
+                })
+			});
+		</script>
+	</body>
+</html>

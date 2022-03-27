@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="../jQuery.js"></script>
+		<script>
+			$(function () {
+				$(".box")
+					.children("li")
+					.mouseover(function () {
+						$(this)
+							.children(".big")
+							.stop()
+							.fadeIn(200)
+							.siblings()
+							.stop()
+							.fadeOut(100);
+						$(this)
+							.siblings("li")
+							.children(".big")
+							.stop()
+							.fadeOut(100)
+							.siblings()
+							.stop()
+							.fadeIn(200);
+						$(this)
+							.stop()
+							.animate(
+								{
+									width: 300,
+								},
+								50
+							)
+							.siblings("li")
+							.stop()
+							.animate(
+								{
+									width: 150,
+								},
+								50
+							);
+						// $(this).parent("li").siblings().css("width", "150px");
+						// $(this).parent().siblings().children(".small").stop().show(100);
+						// $(this).parent().siblings().children(".big").stop().hide();
+					});
+			});
+		</script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				background-color: black;
+			}
+			li {
+				list-style: none;
+			}
+			.king {
+				width: 1210px;
+				height: 162px;
+				border: 1px solid white;
+				margin: 500px auto;
+			}
+			.box {
+				display: flex;
+				width: 1200px;
+				height: 160px;
+			}
+			.box li {
+				/* flex: 1; */
+				margin-left: 10px;
+				border: 1px solid white;
+				position: relative;
+				width: 150px;
+				height: 160px;
+				box-sizing: border-box;
+				/* z-index: 99999; */
+			}
+			.box li:nth-child(1) {
+				width: 300px;
+			}
+			.box li:nth-child(1) {
+				margin-left: 0;
+			}
+			.box li .big {
+				position: absolute;
+				left: 0;
+				top: 0;
+				height: 160px;
+				width: 300px;
+				display: none;
+			}
+			.box li .small {
+				position: absolute;
+				left: 0;
+				top: 0;
+				height: 160px;
+				/* width: 100%; */
+				z-index: 999;
+				width: 150px;
+				box-sizing: border-box;
+				border: 2px solid white;
+			}
+			.box li:nth-child(1) .big {
+				display: block;
+			}
+			.box li:nth-child(1) .small {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="king">
+			<ul class="box">
+				<li>
+					<img src="image/2021011206146123.jpg" alt="" class="small" />
+					<img src="image/306467_600x600.png" alt="" class="big" />
+				</li>
+				<li>
+					<img src="image/2021011207329472.jpg" alt="" class="small" />
+					<img
+						src="image/961388b02f60938cd572228379e0831a.jpg"
+						alt=""
+						class="big"
+					/>
+				</li>
+				<li>
+					<img src="image/2021011208522809.jpg" alt="" class="small" />
+					<img src="image/311149732.jpg" alt="" class="big" />
+				</li>
+				<li>
+					<img src="image/2021011213347352.jpg" alt="" class="small" />
+					<img src="image/2017041834623893.jpg" alt="" class="big" />
+				</li>
+				<li>
+					<img src="image/2021011213371368.jpg" alt="" class="small" />
+					<img src="image/OIP-C.jpg" alt="" class="big" />
+				</li>
+				<li>
+					<img src="image/2021011261746825.jpg" alt="" class="small" />
+					<img src="image/R-C1.jpg" alt="" class="big" />
+				</li>
+				<li>
+					<img src="image/2021020317200899031.jpg" alt="" class="small" />
+					<img
+						src="image/v2-01f95d779f635cac2b687b5acb186ea3_r.jpg"
+						alt=""
+						class="big"
+					/>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

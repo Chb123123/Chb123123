@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="jQuery.js"></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			li {
+				list-style: none;
+			}
+			a {
+				text-decoration: none;
+			}
+			.container {
+				position: relative;
+				width: 80px;
+				margin: 100px auto;
+				/* border: 1px solid red; */
+			}
+			.container li {
+				cursor: pointer;
+				border: 1px solid #ccc;
+				width: 80px;
+				text-align: center;
+				height: 30px;
+				line-height: 30px;
+				box-sizing: border-box;
+				transition: all 0.3s;
+			}
+			.container li:hover {
+				background-color: red;
+				color: white;
+			}
+            .container li:nth-child(1){
+                background-color: red;
+				color: white;
+            }
+			.container li:nth-child(1) .commodity {
+				display: block;
+			}
+			.commodity {
+				display: none;
+				position: absolute;
+				top: 0;
+				right: -200px;
+				/* border: 1px solid red; */
+				width: 200px;
+				height: 240px;
+			}
+			.commodity img {
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="container">
+			<li>
+				服饰
+				<div class="commodity">
+					<img src="image/clothes.png" alt="" />
+				</div>
+			</li>
+			<li>
+				键盘
+				<div class="commodity">
+					<img src="image/keyboard.png" alt="" />
+				</div>
+			</li>
+			<li>
+				百货
+				<div class="commodity">
+					<img src="image/nike.png" alt="" />
+				</div>
+			</li>
+			<li>
+				电饭煲
+				<div class="commodity">
+					<img src="image/pot.png" alt="" />
+				</div>
+			</li>
+			<li>
+				鞋子
+				<div class="commodity">
+					<img src="image/shoes.png" alt="" />
+				</div>
+			</li>
+			<li>
+				抹布
+				<div class="commodity">
+					<img src="image/下载4_r2_c2.jpg" alt="" />
+				</div>
+			</li>
+			<li>
+				剃须刀
+				<div class="commodity">
+					<img src="image/下载3_r2_c2.jpg" alt="" />
+				</div>
+			</li>
+			<li>
+				手表
+				<div class="commodity">
+					<img src="image/下载6_r2_c6.jpg" alt="" />
+				</div>
+			</li>
+		</ul>
+		<script>
+			$(function () {
+				$(".container")
+					.children("li")
+					.mouseover(function () {
+						$(this)
+							.siblings("li")
+							.children(".commodity")
+							.css("display", "none");
+						$(this).children(".commodity").css("display", "block");
+					});
+			$('.container').children('li').mouseover(function(){
+                $(this).siblings('li').css('background-color','white').css('color','#444')
+                $(this).css('background-color','red').css('color','white')
+            })
+			});
+		</script>
+	</body>
+</html>

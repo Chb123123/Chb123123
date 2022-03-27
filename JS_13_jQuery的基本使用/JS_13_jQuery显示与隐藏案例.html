@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.box {
+				width: 200px;
+				height: 300px;
+				background-color: red;
+			}
+			button {
+				margin-right: 30px;
+			}
+		</style>
+		<script src="jQuery.js"></script>
+		<script>
+			$(function () {
+				$("button")
+					.eq(0)
+					.click(function () {
+						$(".box").show(1000, function () {
+							$(this).css("background-color", "blue");
+						});
+					});
+				$("button")
+					.eq(1)
+					.click(function () {
+						$(".box").hide(1000, function () {
+							$(this).css("background-color", "red");
+						});
+					});
+				$("button")
+					.eq(2)
+					.click(function () {
+						$(".box").toggle(1000);
+					});
+			});
+		</script>
+	</head>
+	<body>
+		<button>显示</button>
+		<button>隐藏</button>
+		<button>切换</button>
+		<div class="box"></div>
+	</body>
+</html>

@@ -5,6 +5,15 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<script src="jQuery.js"></script>
+		<script>
+			$(function(){
+				$('.nav').children('li').hover(function(){
+					// stop() 必须写在动画前面
+					$(this).children('ul').stop().slideToggle(200)
+				})
+			})
+		</script>
 		<style>
 			* {
 				padding: 0;
@@ -66,6 +75,7 @@
 			}
             .nav li ul li:hover{
                 background-color: red;
+				color: white;
             }
 		</style>
 	</head>
@@ -126,18 +136,18 @@
 			// }
             // var lis = document.querySelector(".nav").querySelectorAll("ul").children;
             // console.log(lis)
-            var nav = document.querySelector('.nav')
-            var lis = nav.children;
-            console.log(lis)
-            for(var i = 0; i < lis.length; i++){
-                lis[i].onmouseover = function(){
-                    this.children[1].style.display = 'block'
-                }
-                lis[i].onmouseout = function(){
-                    this.children[1].style.display = 'none'
-                }
+            // var nav = document.querySelector('.nav')
+            // var lis = nav.children;
+            // console.log(lis)
+            // for(var i = 0; i < lis.length; i++){
+            //     lis[i].onmouseover = function(){
+            //         this.children[1].style.display = 'block'
+            //     }
+            //     lis[i].onmouseout = function(){
+            //         this.children[1].style.display = 'none'
+            //     }
                 
-            }
+            // }
 		</script>
 	</body>
 </html>

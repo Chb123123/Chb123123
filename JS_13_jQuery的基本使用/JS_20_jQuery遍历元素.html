@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.js"></script>
+</head>
+<body>
+    <div>盒子1</div>
+    <div>盒子2</div>
+    <div>盒子3</div>
+    <div>盒子4</div>
+    <script>
+        $(function(){
+            // 隐式迭代
+            // $('div').css('color','red')
+            // each() 遍历对象
+            $('div').each(function(index,domEle){
+                console.log(index)
+            })
+        })
+    </script>
+</body>
+</html>

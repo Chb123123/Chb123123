@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.js"></script>
+    <script>
+        $(function(){
+            // 获取属性值 element.prop('属性名')
+            console.log($('a').prop('href'))
+            $("a").prop('title','傻逼')
+            $('input').change(function(){
+                console.log($(this).prop('checked'))
+            })
+            // 获取自定义属性 我们通过attr('自定义属性名') 获取
+            console.log($('div').attr('index'))
+            // 数据缓存 data() 这个里面的数据是存放在元素内存里面的 
+            $('span').data('uname','andy')
+            console.log($('span').data('index'))
+        })
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            /* display: block; */
+            text-decoration: none;
+            color: #666;
+            width: 100px;
+            /* margin: 100px auto 0; */
+        }
+        
+    </style>
+</head>
+<body>
+    <a href="https://www.bilibili.com/video/BV16v4y1Z7QD/?spm_id_from=autoNext" title="跳转到B站">跳转到B站</a>
+    <input type="checkbox" name="" id="" checked="checked">
+    <div index="1"></div>
+    <span data-index="2">你好</span>
+</body>
+</html>

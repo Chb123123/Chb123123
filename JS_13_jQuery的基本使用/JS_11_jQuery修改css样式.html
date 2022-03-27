@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			div {
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				border: 4px solid blue;
+			}
+			.current {
+				width: 200px;
+				height: 200px;
+				background-color: blue;
+				border: 2px solid red;
+			}
+		</style>
+		<script src="jQuery.js"></script>
+		<script>
+			$(function () {
+				$('div').click(function(){
+                    $('div').toggleClass('current')
+                })
+                
+			});
+		</script>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

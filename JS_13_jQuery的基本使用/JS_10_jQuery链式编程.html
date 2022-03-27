@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="jQuery.js"></script>
+		<script>
+			$(function () {
+				$("button").click(function () {
+                    // 链式编程 让代码在同一段代码显示
+					$(this).css("color", "red").siblings().css("color", "");
+					// $(this).siblings().css('color','#444')
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button>按钮1</button><button>按钮2</button><button>按钮3</button
+		><button>按钮4</button><button>按钮5</button><button>按钮6</button>
+	</body>
+</html>
