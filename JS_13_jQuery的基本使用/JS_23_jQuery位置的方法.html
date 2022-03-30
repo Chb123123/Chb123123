@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="jQUery.js"></script>
+		<script>
+			$(function () {
+				// 获取元素位置
+				// offset() 返回的是元素距离文档的 top值 和 left值 offset().left/top  可以返回元素距离左边或上面多少 返回值是一个数值
+				// $(".box").offset({
+				// 	// 修改 offste 里面的对象 使元素发生改变
+				// 	top: 200,
+				// 	left: 300,
+				// 	// console.log($('.box').offset().top())
+				// });
+				// position() 获取元素的偏移 获取的是当前元素在相对定位的父盒子的距离
+                $('.box').position({
+                    left: 100,
+                })
+                console.log($('.box').position())
+			});
+		</script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.container {
+				position: relative;
+				width: 500px;
+				height: 500px;
+				margin: 100px;
+				background-color: aqua;
+			}
+			.box {
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				width: 100px;
+				height: 100px;
+				background-color: purple;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="box"></div>
+		</div>
+	</body>
+</html>

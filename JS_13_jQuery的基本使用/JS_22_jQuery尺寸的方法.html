@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.js"></script>
+    <script>
+        $(function(){
+            // width/height 返回的是元素的宽度 不包含边框和内边距 如果括号里面添加了数字 则是做修改
+            // console.log($('.box').width())
+            // console.log($('.box').height())
+            // $('.box').width(300)
+            // innerWidth/innerHeight 返回的是元素的宽度或高度 包含 padding值
+            console.log($('.box').innerWidth())
+            console.log($('.box').innerHeight())
+            // outerWidth()/outerHeight() 返回的是元素的宽或高 包含了宽度 边框 内边距 
+            console.log($('.box').outerHeight())
+            console.log($('.box').outerWidth())
+            // outerWidth(true)/outerHeight(true) 返回的是 width + border + padding + margin
+            console.log($('.box').outerWidth(true))
+            console.log($('.box').outerHeight(true))
+        })
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            margin: 100px auto;
+            width: 200px;
+            height: 200px;
+            border: 10px solid red;
+            padding: 20px;
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+</body>
+</html>

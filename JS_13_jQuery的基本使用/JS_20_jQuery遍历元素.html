@@ -12,13 +12,50 @@
     <div>盒子2</div>
     <div>盒子3</div>
     <div>盒子4</div>
+    <!-- <div class="input">
+        <input type="text" name="" id="" value="3" class="input_val">
+    </div>
+    <div class="input">
+        <input type="text" name="" id="" value="4" class="input_val">
+    </div>
+    <div class="input">
+        <input type="text" name="" id="" value="1" class="input_val">
+    </div>
+    <div class="input">
+        <input type="text" name="" id="" value="3" class="input_val">
+    </div> -->
     <script>
         $(function(){
             // 隐式迭代
             // $('div').css('color','red')
-            // each() 遍历对象
+            // (1)each() 遍历对象
+            var color = ['red','blue','aqua','purple']
             $('div').each(function(index,domEle){
+                console.log(index);
+                console.log(domEle);
+                $(domEle).css('color',color[index])
+            })
+            // var sun = 0;
+            // $('.input_val').each(function(index,domEle){
+            //     // console.log(index)      
+            //     // console.log(domEle)
+            //     // 将表单里面的值相加
+            //     // console.log($(domEle).val())
+            //     sun += $(domEle).val() - ''
+            // })
+            // console.log(sun)
+            // (2) $.each($(div),function(index,domEle){})  主要用来处理数据
+            $.each($('div'),function(index,domEle){
                 console.log(index)
+                console.log(domEle)
+            })
+            $.each(color,function(i,Ele){  // 遍历数组
+                console.log(i)
+                console.log(Ele)
+            })
+            $.each({name:'andy',age:'18'},function(i,ele){  // 遍历对象
+                console.log(i) // i 为键
+                console.log(ele)  // ele 为值 
             })
         })
     </script>

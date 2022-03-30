@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="jQuery.js"></script>
+		<script>
+			$(function () {
+				// 创建元素 $("<li></li>")
+				var lis = $("<li>生成的li</li>");
+				// 添加元素
+                // (1) 内部添加 将生成的元素添加在元素里面
+				$("ul").click(function () {
+                    // append 将元素放到最后面
+					// $(this).append(lis);
+                    // prepend 将元素放到最前面
+                    $(this).prepend(lis)
+				});
+                // (2) 外部添加 将生成的元素添加在外面
+                var div = $("<div>生成的div</div>")
+                // after 将元素添加在选中的元素后面
+                // $('.box').after(div)
+                // before  将元素添加在选中元素的前面
+                $('.box').before(div)
+                // 删除元素 remove() 将选中的盒子删除
+                // 清空元素 empty() 将选中元素的内容清空 但是选中的盒子还存在
+			});
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>原生的li</li>
+		</ul>
+        <div class="box">原生的div</div>
+	</body>
+</html>

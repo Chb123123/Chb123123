@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .container{
+            width: 300px;
+            height: 4200px;
+            border: 1px solid red;
+            margin: 500px auto 0;
+        }
+        .fiexd{
+            position: fixed;
+            right: 140px;
+            bottom: 100px;
+            border: 1px solid red;
+            text-align: center;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+    <div class="fiexd">返回顶部</div>
+    <script>
+        $(function(){
+            // 获取被卷去的头部 scrollTop/ scrollLeft 设置或获取被卷去的头部或左侧
+            // scroll 滚动事件
+            var sont_top = $('.container').offset().top
+            $(window).scroll(function(){
+                if($(document).scrollTop() >= sont_top){
+                    $('.fiexd').fadeIn(200)
+                }else{
+                    $('.fiexd').fadeOut(200)
+                }
+                // console.log($('.container').offset().top)  // 获取container 元素距离顶部的距离
+            })
+            // 点击返回顶部有动画的返回
+            $('.fiexd').click(function(){
+                // window.scroll(0,0)
+                $('body,html').stop().animate({
+                    scrollTop: 0,
+                })
+            })
+            // scrollTop() 不仅可以获取元素 也可以修改元素 在括号里面添加数值 可以使页面直接跳转到相应的位置
+            $(document).scrollTop(500)
+        })
+    </script>
+</body>
+</html>
