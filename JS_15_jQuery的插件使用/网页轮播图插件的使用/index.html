@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/camroll_slider.css">
+		<link rel="stylesheet" href="dist/camroll_slider.min.css" />
+		<style>
+			#my-slider {
+				width: 100%;
+				height: 404px;
+				color: white;
+			}
+
+			@media (max-width: 640px) {
+				#my-slider .crs-bar-roll-current {
+					width: 38px;
+					height: 38px;
+				}
+
+				#my-slider .crs-bar-roll-item {
+					width: 30px;
+					height: 30px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="my-slider" class="crs-wrap">
+			<div class="crs-screen">
+				<div class="crs-screen-roll">
+					<div
+						class="crs-screen-item"
+						style="background-image: url('images/1.jpg')"
+					>
+						<!-- <div class="crs-screen-item-content"><h1>Lorem...</h1></div> -->
+					</div>
+					<div
+						class="crs-screen-item"
+						style="background-image: url('images/2.jpg')"
+					>
+						<!-- <div class="crs-screen-item-content"><h1>Lorem...</h1></div> -->
+					</div>
+					<div
+						class="crs-screen-item"
+						style="background-image: url('images/3.jpg')"
+					>
+						<!-- <div class="crs-screen-item-content"><h1>Lorem...</h1></div> -->
+					</div>
+					<div
+						class="crs-screen-item"
+						style="background-image: url('images/4.jpg')"
+					>
+						<!-- <div class="crs-screen-item-content"><h1>Lorem...</h1></div> -->
+					</div>
+					<div
+						class="crs-screen-item"
+						style="background-image: url('images/5.jpg')"
+					>
+						<!-- <div class="crs-screen-item-content"><h1>Lorem...</h1></div> -->
+					</div>
+					<div
+						class="crs-screen-item"
+						style="background-image: url('images/6.jpg')"
+					>
+						<!-- <div class="crs-screen-item-content"><h1>Lorem...</h1></div> -->
+					</div>
+				</div>
+			</div>
+			<div class="crs-bar">
+				<div class="crs-bar-roll-current"></div>
+				<div class="crs-bar-roll-wrap">
+					<div class="crs-bar-roll">
+						<div
+							class="crs-bar-roll-item"
+							style="background-image: url('images/1.jpg')"
+						></div>
+						<div
+							class="crs-bar-roll-item"
+							style="background-image: url('images/2.jpg')"
+						></div>
+						<div
+							class="crs-bar-roll-item"
+							style="background-image: url('images/3.jpg')"
+						></div>
+						<div
+							class="crs-bar-roll-item"
+							style="background-image: url('images/4.jpg')"
+						></div>
+						<div
+							class="crs-bar-roll-item"
+							style="background-image: url('images/5.jpg')"
+						></div>
+						<div
+							class="crs-bar-roll-item"
+							style="background-image: url('images/6.jpg')"
+						></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-1.11.0.min.js"></script>
+		<script src="dist/camroll_slider.min.js"></script>
+		<script>
+			$("#my-slider").camRollSlider();
+		</script>
+	</body>
+</html>

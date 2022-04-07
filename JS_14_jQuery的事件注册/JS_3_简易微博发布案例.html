@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="jQuery.js"></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.container {
+				position: relative;
+				width: 400px;
+				/* height: 200px; */
+				/* border: 1px solid red; */
+				margin: 100px auto;
+			}
+			.box {
+				margin: 30px auto 0;
+				border: 1px solid red;
+				width: 300px;
+				height: 150px;
+			}
+			textarea {
+				width: 100%;
+				resize: none;
+				height: 100%;
+			}
+			ul {
+				/* position: absolute;
+				left: 50%;
+				bottom: -50px;
+				transform: translateX(-50%); */
+				width: 300px;
+				margin: auto;
+				/* border: 1px solid red; */
+			}
+			li {
+				list-style: none;
+				height: 30px;
+				line-height: 30px;
+				border-bottom: 1px solid #ccc;
+				display: none;
+			}
+			li a {
+				display: block;
+				float: right;
+				/* text-align: right; */
+				text-decoration: none;
+			}
+			.btn {
+				position: absolute;
+				right: 15px;
+				top: 130px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="box">
+				<textarea
+					name=""
+					id=""
+					cols="30"
+					rows="10"
+					placeholder="输入你的看法"
+				></textarea>
+			</div>
+			<ul></ul>
+			<input type="button" value="发布" class="btn" />
+		</div>
+		<script>
+			$(function () {
+				// 点击发布 生成 li
+				// var uls = document.querySelector('ul')
+				$(".btn").on("click", function () {
+					var lis = $("<li></li>");
+					// 将用户输入的内容存放在 li 里面
+					$(lis).text($("textarea").val());
+					// 点击发布 输入框的内容清空
+					$("textarea").val("");
+					// 将生成的 li 添加在ul 里面
+					$("ul").prepend(lis);
+					var as = $("<a href='javascript:;'>删除</a>");
+					$(lis).append(as);
+					// $(lis).css('display','block')
+					$(lis).slideDown(400);
+				});
+				// 点击删除 则删除当前的 li
+				$("ul").on("click", "li>a", function () {
+					$(this)
+						.parent()
+						.slideUp(function () {
+							$(this).remove();
+						});
+				});
+			});
+		</script>
+	</body>
+</html>

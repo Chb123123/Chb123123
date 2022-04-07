@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="jQuery.js"></script>
+		<script>
+			$(function () {
+				// 如果想要把某个对象拷贝到另一个对象 此时可以使用 $.extend() 方法
+				// $.extend([deep], target, objext1, [objsctN]) deep 深拷贝还是浅拷贝 默认时浅拷贝
+				// terget 要拷贝的目标对象
+				// objext1 待拷贝到第一个的对象
+				var terget1 = {
+                    id: 0,
+                    name: 'laozhao'
+                };
+				var obj = {
+					id: 1,
+					name: "andy",
+					like: "屎",
+                    masg: {
+                        age: 18,
+                        name: 'ouyangxiaomi'
+                    }
+				};
+                // $.extend(terget1,obj)
+                $.extend(terget1,obj) // 如果拷贝的对象原先里面有内容 ，则会覆盖原先的内容 拷贝新的内容
+                console.log(terget1)
+			});
+		</script>
+	</head>
+	<body>
+		<div class="box">How are you</div>
+		<div>I'm find ,thankyou</div>
+	</body>
+</html>

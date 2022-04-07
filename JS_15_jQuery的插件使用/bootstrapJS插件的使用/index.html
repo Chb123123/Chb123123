@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<script src="js/jQuery.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<!-- Button trigger modal -->
+		<!-- <button
+			type="button"
+			class="btn btn-primary btn-lg"
+			data-toggle="modal"
+			data-target="#myModal"
+		>
+			点我一下好不好
+		</button> -->
+
+		<!-- Modal -->
+		<!-- <div
+			class="modal fade"
+			id="myModal"
+			tabindex="-1"
+			role="dialog"
+			aria-labelledby="myModalLabel"
+		>
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button
+							type="button"
+							class="close"
+							data-dismiss="modal"
+							aria-label="Close"
+						>
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel">问你个问题</h4>
+					</div>
+					<div class="modal-body">你是笨蛋吗</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							是
+						</button>
+						<button type="button" class="btn btn-primary">你才是笨蛋</button>
+					</div>
+				</div>
+			</div>
+		</div> -->
+		<!-- 自定义模态框 -->
+		<!-- <button type="button" data-toggle="modal" data-target="#btn">你动我一下试试</button> -->
+		<button class="btn">你动我一下试试</button>
+		<div class="modal fade" tabindex="-1" role="dialog" id="btn">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button
+							type="button"
+							class="close"
+							data-dismiss="modal"
+							aria-label="Close"
+						>
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title">Modal title</h4>
+					</div>
+					<div class="modal-body">
+						<p>One fine body&hellip;</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							Close
+						</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!-- /.modal -->
+		<div class="nav"></div>
+		<div>
+			<!-- Nav tabs -->
+			
+			<ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active">
+					<a href="#home" aria-controls="home" role="tab" data-toggle="tab"
+						>主页</a
+					>
+				</li>
+				<li role="presentation">
+					<a
+						href="#profile"
+						aria-controls="profile"
+						role="tab"
+						data-toggle="tab"
+						>详情页</a
+					>
+				</li>
+				<li role="presentation">
+					<a
+						href="#messages"
+						aria-controls="messages"
+						role="tab"
+						data-toggle="tab"
+						>副业</a
+					>
+				</li>
+				<li role="presentation">
+					<a
+						href="#settings"
+						aria-controls="settings"
+						role="tab"
+						data-toggle="tab"
+						>傻逼</a
+					>
+				</li>
+			</ul>
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="home">傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼</div>
+				<div role="tabpanel" class="tab-pane" id="profile">傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼</div>
+				<div role="tabpanel" class="tab-pane" id="messages">傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼</div>
+				<div role="tabpanel" class="tab-pane" id="settings">傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼傻逼傻逼大傻逼</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		$(function () {
+			$(".btn").on("click", function () {
+				$("#btn").modal();
+			});
+			$(".mybtn").on("click", function () {
+				$("#mybtn").modal();
+			});
+		});
+		$("#myTabs a").click(function (e) {
+			e.preventDefault();
+			$(this).tab("show");
+		});
+	</script>
+</html>

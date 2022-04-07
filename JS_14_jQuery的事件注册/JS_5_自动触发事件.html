@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.js"></script>
+    <script>
+        $(function(){
+            // 自动触发事件
+            $('div').on('click',function(){
+                $(this).css('background-color','red')
+            })
+            // (1) 元素.事件 页面刷新直接触发
+            // $('div').click()
+            // (2) 元素.trigger('想触发的事件')
+            // $('div').trigger('click')
+            // (3) 元素.triggerHandler("事件") triggerHandler 不会触发元素的默认行为 比如：获取表单时 不会触发光标
+            $('div').triggerHandler("click")
+            $('input').on('focus',function(){  // 事件会触发 光标事件
+                $(this).val('大煞笔')
+            })
+            $('input').focus()  // 会触发光标事件
+            // $('input').triggerHandler('focus')  // triggerHander 不会触发input 的光标事件
+        })
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <input type="text" name="" id="">
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="jQuery.js"></script>
+	</head>
+	<body>
+		<script>
+			$(function () {
+				var toDoList = [
+					{
+						title: "今天天气真好",
+						done: false,
+					},
+					{
+						title: "今天真冷",
+						done: true,
+					},
+				];
+				// localStorage.setItem('todo',toDoList)
+				// 本地存储 只能存储字符串格式  如果想存储 数组 可以将数组转换位 字符串 JSON.stringify()
+				// localStorage.setItem("todo", JSON.stringify(toDoList));
+				// 在存的时候转换为字符串 在取的时候 转换为 对象格式 JSON.parse()
+                // var clone = localStorage.getItem('todo')
+                // var clone = JSON.parse(clone)
+                // console.log(clone[1])
+				toDoList.pop(0)
+				console.log(toDoList)
+				localStorage.setItem('todo',JSON.stringify(toDoList))
+				var list1 = [1,2,3,4,5,6,7]
+				console.log(list1.reverse())
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- <link rel="stylesheet" href="css/index.css"> -->
+    <style>
+        #wrapper{ width:1000px;margin:50px auto;position:relative; }
+	fieldset, img { border: 0; }
+	img { display:inline-block; }
+	ol, ul { list-style: none outside none; }
+	.show_images_list_li {
+		position: absolute;
+		cursor: pointer;
+		vertical-align:bottom; 
+		/* display:block; */
+	}
+	.btn { 
+		width:101px; 
+		height:25px; 
+		margin:auto; 
+		position:relative; 
+		padding-top:370px;
+	}
+	.btn a{
+		width:17px; 
+		height:15px; 
+		overflow:none; 
+		display:block;
+		background:url(images/btn.png) 0 0 no-repeat; 
+		cursor: pointer;
+		float:left;
+	}
+	.btn a.active{ 
+		background:url(images/btn.png) -17px 0 no-repeat;
+	}
+	.show_images_list_li img{width: 527px; height: 310px;}
+	.show_images_list_li:first-child img{width: 599px; height: 353px;}
+    </style>
+</head>
+<body>
+    <article class="htmleaf-container">
+		<div id="wrapper">
+		  <div id="maincontent">
+		    <div id="huadong">
+		      <ul class="show_images_list">
+		        <li class="show_images_list_li show_images_1" style="z-index: 15; top: 1px; left: 200px;">
+			        <a href="#" target="_blank">
+			        	<img  class="show_images_1_img" src="images/1.jpg">
+			        </a>
+		        </li>
+		        <li class="show_images_list_li show_images_2" style="z-index: 10; top: 20px; left: 0px;">
+			        <a href="#" target="_blank">
+			        	<img class="show_images_2_img" src="images/2.jpg">
+			        </a>
+		        </li>
+		        <li class="show_images_list_li show_images_3" style="z-index: 5; top: 20px; left: 459px;">
+			        <a href="#" target="_blank">
+			        	<img class="show_images_3_img" src="images/3.jpg">
+			        </a>
+		        </li>
+		        <li class="show_images_list_li show_images_4" style="z-index: 0; top: 20px; left: 200px;">
+			        <a href="#" target="_blank">
+			        	<img class="show_images_4_img" src="images/4.jpg">
+			        </a>
+		        </li>
+		      </ul>
+		      
+		    </div>
+		    <div class="btn"> 
+			    <a class="btn1" rel="1" ></a> 
+			    <a class="btn2" rel="2" ></a> 
+			    <a class="btn3" rel="3" ></a> 
+			    <a class="btn4" rel="4" ></a> 
+		    </div>
+		  </div>
+		</div>
+	</article>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/gallery.js"></script>
+    <!-- <script src="js/index.js"></script> -->
+    <script type="text/javascript">
+        $(function() {
+            $(".btn").show();
+            $(".btn  a:first").addClass("active");	
+            $().gallery({
+                current: [".show_images_1",".show_images_1_img"],
+                left: [".show_images_2",".show_images_2_img"],
+                right: [".show_images_3",".show_images_3_img"],
+                none: [".show_images_4",".show_images_4_img"],
+                duration: 500,
+                start: function() {
+                    $(".header_text").fadeOut(150);
+                },
+                end: function() {
+                    $(".header_text").fadeIn(150);
+                },
+                autoChange : true,
+                changeTimeout: 2000,
+                stopTarget : ".show_images_list_li"
+            });
+        });
+        </script>
+</body>
+</html>

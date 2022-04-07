@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.js"></script>
+    <script>
+        $(function(){
+            // jQuery.js 多库共存 有不同的语言可以都存在 $ 关键字 这时就会起冲突问题
+            // 这时我们可以自定义一个类名 var xx = $.noConflict() 将 $ 改为 xx
+            var abc = $.noConflict()
+            console.log(abc('div'))
+        })
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

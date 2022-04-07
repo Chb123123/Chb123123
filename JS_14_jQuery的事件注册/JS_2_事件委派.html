@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.js"></script>
+</head>
+<body>
+    <ul>
+        <li>你好</li>
+        <li>你好</li>
+        <li>你好</li>
+    </ul>
+    <ol>
+
+    </ol>
+    <script>
+        // 事件委派操作 ，事件委派定义就是 把原来给子元素身上的事件绑定在父元素身上，就是把事件委派给父元素
+        $('ul').on('click','li',function(){
+            alert('123')
+        })
+        // 对于后来创建的子元素 无法触发当前的事件
+        // $('ol li').click(function(){
+        //     alert('999')
+        // })
+        // 但是可以利用 on 来解决这个问题 
+        $('ol').on('click','li',function(){
+            alert('999')
+        })
+        var lis = $('<li>加油</li>')
+        $('ol').append(lis)
+    </script>
+</body>
+</html>
